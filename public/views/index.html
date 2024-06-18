@@ -8,11 +8,15 @@
     <title>Villedieu</title>
 </head>
 <body>
+    <div id="specOps">{{template "specOps"}}</div>
+    <div id="content">
     {{if .Slides}}
         {{template "slideshow"}}
     {{else}}
         {{template "single page"}}
-    {{end}}
+    {{end}} 
+    </div>
+
 </body>
 </html>
 {{end}}
@@ -26,7 +30,11 @@
 {{end}}
 
 {{define "slideshow"}}
+<div id="slideport">
+    <div class="slideBtn"><img id="forward" src="/static/images/forward.svg" alt="next" width="20" height="20" href="/next"></div>
     <div class="viewport">{{template "welcome"}}</div>
+    <div class="slideBtn"><img id="backward" src="/static/images/back.svg" alt="back" width="20" height="20" href="/back"></div>
+</div>
 
 {{end}}
 
@@ -39,7 +47,7 @@
             Welcome! The main reason most of you are here is to see my work, so I will keep this short. I am a backend
             developer that has found himself returning to a passion that never fully faded. I started coding as a hobby
             before highschool, but unfortunately the classes I took in college stole my interest. I found myself in the
-            fitness world. While there I gained integral communication skills as well as many life lessons. 
+            fitness world. While there I gained integral communication skills as well as many life lessons. Never stop learning.
         </p>
     </div>
     <div id="languages">
@@ -68,4 +76,8 @@
 
 {{define "contact"}}
     Email: ChrisRVill@gmail.com
+{{end}}
+
+{{define "specOps"}}
+    <a href="/swapstyle">I will be a button!</a>
 {{end}}

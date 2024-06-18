@@ -11,10 +11,18 @@ import (
 func Start() {
 	e := echo.New()
 	e.Static("/static", "public")
-
+	newPage := Page{Slides: false}
 	e.Renderer = newTemplate()
 	e.GET("/", StartPage)
-	e.GET("/slide", SlidesPage)
+
+	e.GET("/swapstyle", func(c echo.Context) error {
+		newPage.Slides = !newPage.Slides
+		err := c.Render(http.StatusOK, "index", newPage)
+		if err != nil {
+			panic("tried ot switch to slides style and failed")
+		}
+		return err
+	})
 
 	e.Logger.Fatal(e.Start(":8080"))
 }
@@ -23,15 +31,6 @@ func StartPage(c echo.Context) error {
 	err := c.Render(http.StatusOK, "index", nil)
 	if err != nil {
 		panic("Couldnt render base index page")
-	}
-	return err
-}
-
-func SlidesPage(c echo.Context) error {
-	newPage := Page{Slides: true}
-	err := c.Render(http.StatusOK, "index", newPage)
-	if err != nil {
-		panic("tried ot switch to slides style and failed")
 	}
 	return err
 }
