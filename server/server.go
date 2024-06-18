@@ -36,7 +36,8 @@ func StartPage(c echo.Context) error {
 }
 
 type Page struct {
-	Slides bool
+	Slides  bool
+	Special string
 }
 
 type Template struct {
