@@ -1,4 +1,4 @@
-package main
+package server
 
 import (
 	"html/template"
@@ -6,15 +6,15 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 )
 
-func main() {
+func Start() {
 	e := echo.New()
 	e.Static("/static", "public")
-	e.Use(middleware.Static("../public"))
+
 	e.Renderer = newTemplate()
 	e.GET("/", StartPage)
+	e.GET("/slide", SlidesPage)
 
 	e.Logger.Fatal(e.Start(":8080"))
 }
@@ -25,6 +25,19 @@ func StartPage(c echo.Context) error {
 		panic("Couldnt render base index page")
 	}
 	return err
+}
+
+func SlidesPage(c echo.Context) error {
+	newPage := Page{Slides: true}
+	err := c.Render(http.StatusOK, "index", newPage)
+	if err != nil {
+		panic("tried ot switch to slides style and failed")
+	}
+	return err
+}
+
+type Page struct {
+	Slides bool
 }
 
 type Template struct {
