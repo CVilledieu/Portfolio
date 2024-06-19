@@ -11,15 +11,17 @@ import (
 func Start() {
 	e := echo.New()
 	e.Static("/static", "public")
-	newPage := Page{Slides: false}
 	e.Renderer = newTemplate()
-	e.GET("/", StartPage)
+
+	newPage := Page{Slides: false}
+
+	e.GET("/", startPage)
 
 	e.GET("/swapstyle", func(c echo.Context) error {
 		newPage.Slides = !newPage.Slides
 		err := c.Render(http.StatusOK, "index", newPage)
 		if err != nil {
-			panic("tried ot switch to slides style and failed")
+			panic(err)
 		}
 		return err
 	})
@@ -27,7 +29,7 @@ func Start() {
 	e.Logger.Fatal(e.Start(":8080"))
 }
 
-func StartPage(c echo.Context) error {
+func startPage(c echo.Context) error {
 	err := c.Render(http.StatusOK, "index", nil)
 	if err != nil {
 		panic("Couldnt render base index page")
@@ -36,8 +38,8 @@ func StartPage(c echo.Context) error {
 }
 
 type Page struct {
-	Slides  bool
-	Special string
+	Slides         bool
+	PortfolioTitle string
 }
 
 type Template struct {
@@ -51,4 +53,12 @@ func newTemplate() *Template {
 	return &Template{
 		templates: template.Must(template.ParseGlob("public/views/*.html")),
 	}
+}
+
+func changeSlide(c echo.Context) error {
+	err := c.Render(http.StatusOK, "index", nil)
+	if err != nil {
+		panic("Something went wrong with creating the page during the change slide")
+	}
+	return err
 }

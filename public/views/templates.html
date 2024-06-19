@@ -1,0 +1,80 @@
+{{define "single page"}}
+    <div id="single page">
+        <div class="contentbox">{{template "welcome"}}</div>
+        <div class="contentbox">{{template "projects"}}</div>
+        <div class="contentbox">{{template "contact"}}</div>
+    </div>  
+{{end}}
+
+
+
+{{define "slide show"}}
+<div class="contentbox">
+    <a class="btn btn-outline-primary" href="/" role="button"><img id="backward" src="/static/images/back.svg" alt="back" width="20" height="20"></a>
+    <div class="slide">{{template "welcome"}}</div>
+    <a class="btn btn-outline-primary" href="/" role="button"><img id="forward" src="/static/images/forward.svg" alt="next" width="20" height="20"></a>
+</div>
+{{end}}
+
+
+
+{{define "welcome"}}
+<div class="welcome">
+    <div id="about">
+        <p>
+            Welcome! The main reason most of you are here is to see my work, so I will keep this short. I am a backend
+            developer that has found himself returning to a passion that never fully faded. I started coding as a hobby
+            before highschool, but unfortunately the classes I took in college stole my interest. I found myself in the
+            fitness world. While there I gained integral communication skills as well as many life lessons. Never stop learning.
+        </p>
+    </div>
+    <div id="languages">
+        <img id="Go logo" src="/static/images/Go-Logo_blue.svg" alt="Go"  width="40" height="40">
+        <img id="JS logo" src="/static/images/js.png" alt="JavaScript" width="40" height="40">
+    </div>
+</div>
+{{end}}
+
+
+{{define "projects"}}
+    <div class="projects">
+        <p><a href="https://github.com/CVilledieu">Github</a></p>
+        <div id="curProjects">
+            <p>
+                Current project:
+            </p> 
+        </div>
+        <div id="prevProjects">
+            <p>
+                Previous projects:
+            </p> 
+        </div>
+    </div>
+{{end}}
+
+
+
+{{define "future"}}
+<div>
+    <p>
+        There is always more to learn, but this is a list of concepts and languages I intend to learn.
+
+        Languages: Zig, Rust, or C.
+
+        There are three types of knowns in this world. Known knowns, known unknowns, and unknown unknowns. We dont know the things we dont know. If you are interested in dropping a tip on a concept or language you think I should look into I would love to hear it.
+        
+        
+    </p>
+</div>
+{{end}}
+
+
+{{define "contact"}}
+    Email: ChrisRVill@gmail.com
+{{end}}
+
+{{define "layout nav"}}
+<div>
+    <a class="btn btn-secondary" href="/swapstyle" role="button">Swap styles!</a>
+</div>
+{{end}}
