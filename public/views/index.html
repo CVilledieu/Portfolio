@@ -9,13 +9,11 @@
     <title>{{if .PortfolioTitle}}{{.PortfolioTitle}}{{else}}My Portfolio{{end}}</title>
 </head>
 <body class="container-fluid">
-    <div id="layout nav">{{template "layout nav"}}</div>
     <div class="container-xl">
-    {{if .Slides}}
-        {{template "slide show"}}
-    {{else}}
-        {{template "single page"}}
-    {{end}} 
+        <div class="contentbox">{{template "welcome"}}</div></br>
+        <div class="contentbox">{{template "about"}}</div></br>
+        <div class="contentbox">{{template "projects"}}</div></br>
+        <div class="contentbox">{{template "contact"}}</div></br>
     </div>
 
 </body>

@@ -1,37 +1,29 @@
-{{define "single page"}}
-    <div id="single page">
-        <div class="contentbox">{{template "welcome"}}</div>
-        <div class="contentbox">{{template "projects"}}</div>
-        <div class="contentbox">{{template "contact"}}</div>
-    </div>  
-{{end}}
-
-
-
-{{define "slide show"}}
-<div class="contentbox">
-    <a class="btn btn-outline-primary" href="/" role="button"><img id="backward" src="/static/images/back.svg" alt="back" width="20" height="20"></a>
-    <div class="slide">{{template "welcome"}}</div>
-    <a class="btn btn-outline-primary" href="/" role="button"><img id="forward" src="/static/images/forward.svg" alt="next" width="20" height="20"></a>
-</div>
-{{end}}
-
-
-
 {{define "welcome"}}
-<div class="welcome">
-    <div id="about">
+    <h1>Hey! I'm Chris, your local back-end developer!</h1>
+{{end}}
+
+
+{{define "about"}}
+<div class="about">
+    <div id="story">
+        <h3>About Me</h3>
         <p>
-            Welcome! The main reason most of you are here is to see my work, so I will keep this short. I am a backend
-            developer that has found himself returning to a passion that never fully faded. I started coding as a hobby
-            before highschool, but unfortunately the classes I took in college stole my interest. I found myself in the
-            fitness world. While there I gained integral communication skills as well as many life lessons. Never stop learning.
+            I'm a self taught developer. I started with JavaScript and working on building the front-end, but quickly found my home in the command line. Making a website always gives a sense of accomplishment, but doesn't compare to creating different tools and solving more difficult bugs.
+            <br>
+            Go is my current passion, but zig, rust, and C are calling my name.             
         </p>
     </div>
-    <div id="languages">
-        <img id="Go logo" src="/static/images/Go-Logo_blue.svg" alt="Go"  width="40" height="40">
-        <img id="JS logo" src="/static/images/js.png" alt="JavaScript" width="40" height="40">
+    <div id="techstack">
+        <h5>The languages and databases I work with:</h3>
+        <div id="languages">
+            <img id="Go logo" src="/static/images/Go-Logo_blue.svg" alt="Go"  width="40" height="40">
+            <img id="JS logo" src="/static/images/js.png" alt="JavaScript" width="40" height="40">
+        </div>
+        <div id="databases">
+            
+        </div>
     </div>
+    
 </div>
 {{end}}
 

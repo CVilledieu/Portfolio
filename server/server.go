@@ -3,6 +3,7 @@ package server
 import (
 	"html/template"
 	"io"
+	"math/rand"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
@@ -14,17 +15,8 @@ func Start() {
 	e.Renderer = newTemplate()
 
 	newPage := Page{Slides: false}
-
+	newPage.funTitles()
 	e.GET("/", startPage)
-
-	e.GET("/swapstyle", func(c echo.Context) error {
-		newPage.Slides = !newPage.Slides
-		err := c.Render(http.StatusOK, "index", newPage)
-		if err != nil {
-			panic(err)
-		}
-		return err
-	})
 
 	e.Logger.Fatal(e.Start(":8080"))
 }
@@ -55,10 +47,9 @@ func newTemplate() *Template {
 	}
 }
 
-func changeSlide(c echo.Context) error {
-	err := c.Render(http.StatusOK, "index", nil)
-	if err != nil {
-		panic("Something went wrong with creating the page during the change slide")
+func (p *Page) funTitles() {
+	if rand.Intn(1001)%500 == 0 {
+		p.PortfolioTitle = "Help!"
+
 	}
-	return err
 }
