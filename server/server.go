@@ -21,6 +21,7 @@ func Start() {
 	e.Logger.Fatal(e.Start(":8080"))
 }
 
+// Creates the page based on the templates, but does not pass in any extra info
 func startPage(c echo.Context) error {
 	err := c.Render(http.StatusOK, "index", nil)
 	if err != nil {
@@ -47,6 +48,7 @@ func newTemplate() *Template {
 	}
 }
 
+// Addes a PortfolioTitle to the page struct based on random chance. Default title is My portfolio, but any PortfolioTitle property passed into the templates will update the title
 func (p *Page) funTitles() {
 	if rand.Intn(1001)%500 == 0 {
 		p.PortfolioTitle = "Help!"

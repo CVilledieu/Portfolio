@@ -9,13 +9,36 @@ a {
 
 .contentbox{
     background-color: rgb(63, 63, 63);
+    border-radius: 40px;
+    padding: 10px;
+    margin: 10px;
 }
 .slideBtn {
     background-color: antiquewhite;
 }
 
-#slideport {
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+
+.goBlue {
+    background-color: rgb(37, 150, 190);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.yellow {
+    background-color: rgb(226, 230, 24);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.botBar {
+    margin-right: 5px;
+}
+
+#logo {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
 }
