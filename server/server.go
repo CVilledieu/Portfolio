@@ -17,6 +17,7 @@ func Start() {
 	newPage := Page{Slides: false}
 	newPage.funTitles()
 	e.GET("/", startPage)
+	e.POST("/githook", currentProject)
 
 	e.Logger.Fatal(e.Start(":8080"))
 }
@@ -54,4 +55,8 @@ func (p *Page) funTitles() {
 		p.PortfolioTitle = "Help!"
 
 	}
+}
+
+func currentProject(c echo.Context) error {
+
 }

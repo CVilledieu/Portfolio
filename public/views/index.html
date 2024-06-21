@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <title>{{if .PortfolioTitle}}{{.PortfolioTitle}}{{else}}My Portfolio{{end}}</title>
 </head>
-<body class="container-fluid">
-    <div class="container-xl">
+<body >
+    <div class="container">
         <div class="contentbox rounded">{{template "welcome"}}</div>
         <div class="position-absolute bottom-0 end-0">{{template "bottom util"}}</div>
         <div class="contentbox rounded">{{template "about"}}</div>
         <div class="contentbox rounded">{{template "projects"}}</div>
-        <div class="contentbox rounded">{{template "contact"}}</div>
-        
+        <div class="contentbox rounded">{{template "contact"}}</div>        
     </div>
 
 </body>

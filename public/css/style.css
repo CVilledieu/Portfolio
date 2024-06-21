@@ -10,8 +10,9 @@ a {
 .contentbox{
     background-color: rgb(63, 63, 63);
     border-radius: 40px;
-    padding: 10px;
+    padding: 100px;
     margin: 10px;
+    width: 100%;
 }
 .slideBtn {
     background-color: antiquewhite;
@@ -42,3 +43,4 @@ a {
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
 }
+
