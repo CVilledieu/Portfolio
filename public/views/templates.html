@@ -1,6 +1,17 @@
 {{define "welcome"}}
-    <h1>Hey! I'm Chris, your local back-end developer!</h1>
-    <img src="/static/images/IMG_1954.JPG" alt="meTEMP" width="200" height="200">
+<div>
+    <div class="row">
+        <div class="col-8"></div>
+        <div class="col-4"><img src="/static/images/IMG_1954.JPG" alt="meTEMP" width="200" height="200"></div>
+        
+    </div>
+    <div class="row">
+        <div class="col-8"><h1>Hey! I'm Chris, your local back-end developer!</h1></div>
+        <div class="col-4"></div>
+    </div>
+    
+</div>
+    
 {{end}}
 
 
@@ -92,8 +103,10 @@
 
 
 {{define "bottom util"}}
-<div class="row botBar">
-    <div class="yellow col" ><a href="https://github.com/CVilledieu"><img id="GitHub logo" src="/static/images/logos/github.svg" alt="GitHub" width="40" height="40"></a></div>
-    <div class="yellow col" ><a href="https://github.com/CVilledieu"><img id="GitHub logo" src="/static/images/logos/github.svg" alt="GitHub" width="40" height="40"></a></div>
+<div class="fixed-bottom ">
+    <div class="d-flex flex-row-reverse">
+        <div class="yellow p-2" ><a href="https://github.com/CVilledieu"><img id="GitHub logo" src="/static/images/logos/github.svg" alt="GitHub" width="40" height="40"></a></div>
+        <div class="yellow p-2" ><a href="/static/other/resume.txt" download><img id="GitHub logo" src="/static/images/resume.svg" alt="GitHub" width="40" height="40"></a></div>
+    </div>
 </div>
 {{end}}
