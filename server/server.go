@@ -14,17 +14,16 @@ func Start() {
 	e.Static("/static", "public")
 	e.Renderer = newTemplate()
 
-	newPage := Page{Slides: false}
-	newPage.funTitles()
 	e.GET("/", startPage)
-	e.POST("/githook", currentProject)
 
 	e.Logger.Fatal(e.Start(":8080"))
 }
 
 // Creates the page based on the templates, but does not pass in any extra info
 func startPage(c echo.Context) error {
-	err := c.Render(http.StatusOK, "index", nil)
+	newPage := Page{Slides: false, Project: newProject()}
+	newPage.funTitles()
+	err := c.Render(http.StatusOK, "index", newPage)
 	if err != nil {
 		panic("Couldnt render base index page")
 	}
@@ -34,6 +33,13 @@ func startPage(c echo.Context) error {
 type Page struct {
 	Slides         bool
 	PortfolioTitle string
+	Project        *Project
+}
+
+type Project struct {
+	Img         string
+	Title       string
+	Description string
 }
 
 type Template struct {
@@ -57,6 +63,12 @@ func (p *Page) funTitles() {
 	}
 }
 
-func currentProject(c echo.Context) error {
-
+// Img will be in /static/images/logos/
+// Img property of Project struct is the name of the svg file
+func newProject() *Project {
+	return &Project{
+		Img:         "htmx",
+		Title:       "Test Project",
+		Description: "A project I am working on",
+	}
 }

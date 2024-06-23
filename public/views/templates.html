@@ -1,18 +1,15 @@
 {{define "welcome"}}
-<div>
-    <div class="row">
-        <div class="col-8"></div>
-        <div class="col-4"><img src="/static/images/IMG_1954.JPG" alt="meTEMP" width="200" height="200"></div>
-        
+<div class="row">
+    <div class="d-flex col-6">
+        <div class="d-flex align-self-end"><h1>Hey! I'm Chris, your local back-end developer!</h1></div>
     </div>
-    <div class="row">
-        <div class="col-8"><h1>Hey! I'm Chris, your local back-end developer!</h1></div>
-        <div class="col-4"></div>
-    </div>
-    
-</div>
-    
+    <div class="col-6">
+        <div ><img src="/static/images/IMG_1954.JPG" alt="meTEMP" width="250" height="250"></div>   
+    </div>    
+</div>    
 {{end}}
+
+
 
 
 {{define "about"}}
@@ -24,7 +21,6 @@
             <br>
             Go is my current passion. It's a language that allows for a quick development time, but also provides features that higher level languages do not have. Errors as values is a prime example. A system level language like zig, rust, or C will be my next language.   
         </p>
-        <img src="/static/images/IMG_1954.JPG" alt="meTEMP" width="200" height="200">
     </div>
     <div class="d-flex justify-content-evenly" id="techstack">
         <div>
@@ -55,58 +51,51 @@
         </div>
     </div>
 </div>
+{{template "contact"}}
+
 {{end}}
 
 
 {{define "projects"}}
     <div class="projects vstack gap-3">
-        <div id="curProjects">
-            <p>
-                Current project:
-            </p> 
+        <div>
+            <h4>Projects:</h4>
         </div>
-        <div id="prevProjects">
-            <p>
-                Previous projects:
-            </p> 
+        <div id="curProjects">
+            <div class="card customCard">
+                <img id="project" src="/static/images/logos/{{.Img}}.svg" alt="Project" width="100" height="100">                
+                <div class="card-body">
+                    <h5 class="card-title">{{.Title}}</h5>
+                    <p class="card-text">{{.Description}}</p>
+                </div>
+            </div>
         </div>
     </div>
 {{end}}
 
 
 
-{{define "future"}}
-<div>
-    <p>
-        There is always more to learn, but this is a list of concepts and languages I intend to learn.
-
-        Languages: Zig, Rust, or C.
-
-        There are three types of knowns in this world. Known knowns, known unknowns, and unknown unknowns. We dont know the things we dont know. If you are interested in dropping a tip on a concept or language you think I should look into I would love to hear it.
-        
-        
-    </p>
-</div>
-{{end}}
-
 
 {{define "contact"}}
-    <div><a href="https://github.com/CVilledieu">Github</a></div>
-    <div>Email: VilledieuCR@gmail.com</div>
-{{end}}
+<div class="container">
+    <div class="row"><h5>Contact info</h5></div>
 
-{{define "layout nav"}}
-<div>
-    <a class="btn btn-secondary" href="/swapstyle" role="button">Swap styles!</a>
+    <div class="row">    
+        <div class="col-8 grid gap-3">
+            <div class="p-2 g-col-6"><a id="logo" href="https://github.com/CVilledieu"><img id="GitHub" src="/static/images/logos/github.svg" alt="GitHub" width="40" height="40"></a></div>
+        </div>
+        <div class="col-4">Email: VilledieuCR@gmail.com</div>    
+    </div>
 </div>
 {{end}}
+
 
 
 {{define "bottom util"}}
 <div class="fixed-bottom ">
     <div class="d-flex flex-row-reverse">
-        <div class="yellow p-2" ><a href="https://github.com/CVilledieu"><img id="GitHub logo" src="/static/images/logos/github.svg" alt="GitHub" width="40" height="40"></a></div>
-        <div class="yellow p-2" ><a href="/static/other/resume.txt" download><img id="GitHub logo" src="/static/images/resume.svg" alt="GitHub" width="40" height="40"></a></div>
+        <div class="util p-2" ><a href="https://github.com/CVilledieu"><img id="GitHub" src="/static/images/logos/github.svg" alt="GitHub" width="40" height="40"></a></div>
+        <div class="util p-2" ><a href="/static/other/resume.txt" download><img id="GitHub" src="/static/images/resume.svg" alt="GitHub" width="40" height="40"></a></div>
     </div>
 </div>
 {{end}}

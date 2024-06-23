@@ -1,6 +1,6 @@
 body {
     background-color: rgb(40, 40, 40);
-    color:antiquewhite;
+    
 }
 
 a {
@@ -8,11 +8,13 @@ a {
 }
 
 .contentbox{
+    color:antiquewhite;
     background-color: rgb(63, 63, 63);
     border-radius: 40px;
     padding: 100px;
     margin: 10px;
     width: 100%;
+    min-height: 90vh;
 }
 .slideBtn {
     background-color: antiquewhite;
@@ -27,8 +29,8 @@ a {
     margin-right: 5px;
 }
 
-.yellow {
-    background-color: rgb(226, 230, 24);
+.util {
+    background-color: antiquewhite;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     padding: 5px;
@@ -41,6 +43,16 @@ a {
 
 #logo {
     background-color: rgb(255, 255, 255);
-    border-radius: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
+
+.customCard {
+    background-color: antiquewhite;
+}
