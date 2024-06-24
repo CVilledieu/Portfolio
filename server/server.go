@@ -22,6 +22,7 @@ type Project struct {
 	Img         string
 	Title       string
 	Description string
+	Link        string
 }
 
 func StartServer() {
@@ -36,7 +37,8 @@ func StartServer() {
 
 // Creates page and sends important info created as page struct
 func getPortfolio(c echo.Context) error {
-	newPage := newPage("Current")
+
+	newPage := newPage()
 	err := c.Render(http.StatusOK, "index", newPage)
 	if err != nil {
 		panic("Couldnt render base index page")
@@ -53,27 +55,9 @@ func newTemplate() *Template {
 	}
 }
 
-func newPage(current string) Page {
+func newPage() Page {
 	return Page{
-		Project: newProject(current),
-		List:    newList([]string{current, "Project2", "Project3", "Project4"}),
+		Project: createProjectList()[0],
+		List:    createProjectList()[1:],
 	}
-}
-
-// Img will be in /static/images/logos/
-// Img property of Project struct is the name of the svg file
-func newProject(name string) Project {
-	return Project{
-		Img:         "test",
-		Title:       name,
-		Description: "The Description of the project.",
-	}
-}
-
-func newList(names []string) []Project {
-	list := []Project{}
-	for _, name := range names {
-		list = append(list, newProject(name))
-	}
-	return list
 }

@@ -63,7 +63,7 @@
 
 {{define "project screen"}}
     <div id="title"><h1>{{.Title}}</h1></div>
-    <div id="projectimg"><img src="/static/images/projects/{{.Img}}.svg" alt="project img" width="500" height="300"></div>
+    <div id="projectimg"><a href="{{.Link}}"><img src="/static/images/projects/{{.Img}}.svg" alt="project img" width="500" height="300"></a></div>
     <div id="description">{{.Description}}</div>
 {{end}}
 
@@ -92,7 +92,7 @@
 
 {{define "listed project"}} 
 <div class="listedProject">
-    <img src="/static/images/projects/test.svg" alt="project img" width="80" height="80">
+    <a href="{{.Link}}"><img src="/static/images/projects/test.svg" alt="project img" width="80" height="80"></a>
     <div class="info">
         <div class="listedTitle"><h2>{{.Title}}</h2></div>
         <div class="listedDescrip">{{.Description}}</div>
