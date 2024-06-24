@@ -29,7 +29,7 @@
 
 
 {{define "about me"}}
-    <div><img src="/static/images/IMG_1954.jpg" alt="Me" width="300" height="300"></div>
+    <div><img src="/static/images/other/IMG_1954.jpg" alt="Me" width="300" height="300"></div>
     <div id="story"><h2>Hey! I'm Chris, a San Diego based back-end developer!</h2>
         <p>
             I am currently using Golang for most of my personal projects. I am planning on jumping into Zig, Rust, C, or Carbon next. 
@@ -42,7 +42,8 @@
         <div id="links">
             <a href="https://github.com/CVilledieu"><img class="logo" src="/static/images/logos/githubCircle.svg" alt="github" width="40" height="40"></a>
             <a href="https://www.linkedin.com/"><img class="logo" src="/static/images/logos/linkedin.svg" alt="linkedin" width="40" height="40"></a>
-            <a href="/static/other/resume.txt" download><img class="logo" src="/static/images/other/boxdownload.svg" alt="resume" width="40" height="40"></a>
+            <a href="/static/other/resume.txt" download><img class="logo" src="/static/images/other/resume.svg" alt="resume" width="40" height="40"></a>
+            <img class="logo" src="/static/images/other/stonks.svg" alt="Tips" width="40" height="40">
         </div>
     </div>
 {{end}}
@@ -61,8 +62,8 @@
 
 
 {{define "project screen"}}
-    <div id="title"><h3>{{.Title}}</h3></div>
-    <div id="projectimg"><img src="/static/images/{{.Img}}.svg" alt="project img" width="500" height="300"></div>
+    <div id="title"><h1>{{.Title}}</h1></div>
+    <div id="projectimg"><img src="/static/images/projects/{{.Img}}.svg" alt="project img" width="500" height="300"></div>
     <div id="description">{{.Description}}</div>
 {{end}}
 
@@ -82,8 +83,8 @@
         <img src="/static/images/logos2/js.svg" alt="js" width="50" height="50">
         <img src="/static/images/logos2/html.svg" alt="html" width="50" height="50">
         <img src="/static/images/logos2/css.svg" alt="css" width="50" height="50">
-        <img src="/static/images/logos/mysql.svg" alt="mysql" width="50" height="50">
-        <img src="/static/images/logos/postgresql.svg" alt="postgresql" width="50" height="50">
+        <img src="/static/images/logos2/mysql3.svg" alt="mysql" width="50" height="50">
+        <img src="/static/images/logos2/postgresql.svg" alt="postgresql" width="50" height="50">
     </div>  
 {{end}}
 
@@ -91,7 +92,7 @@
 
 {{define "listed project"}} 
 <div class="listedProject">
-    <img src="/static/images/test.svg" alt="project img" width="80" height="80">
+    <img src="/static/images/projects/test.svg" alt="project img" width="80" height="80">
     <div class="info">
         <div class="listedTitle"><h2>{{.Title}}</h2></div>
         <div class="listedDescrip">{{.Description}}</div>
