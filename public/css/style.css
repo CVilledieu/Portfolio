@@ -1,8 +1,9 @@
 .topView{
-    background-color: antiquewhite;
+    background-color: rgb(60,60,60);
     padding: 20px;
     margin: 5px;
     border-radius: 20px;
+    color:antiquewhite;
 }
 
 .pageContainer{
@@ -17,7 +18,7 @@
 .UI {
     margin: 30px;
     padding: 20px;
-    background-color: rgb(60,60,60);
+    background-color: antiquewhite;
     border-radius: 20px;
     display: flex;
     min-height: 87vh;
@@ -51,13 +52,31 @@
 
 .currentProject{
     flex-grow: 95;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
 }
 .projectList{
     flex-basis: 20%;
 }
 
+#title {
+    display: flex;
+    justify-content: center;
+}
+#description{
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
 
+}
+#projectimg{
+    flex-grow: 2;
+    display: flex;
+    justify-content: center;
 
+}
 
 .extras{
     flex-basis: 15%;
@@ -71,4 +90,11 @@
 #links {
     display: flex;
     justify-content: space-evenly;
+}
+
+
+.logo{
+    background-color: antiquewhite;
+    border-radius: 5px;
+    padding: 5px;
 }

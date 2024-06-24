@@ -67,7 +67,7 @@ func (p *Page) funTitles() {
 // Img property of Project struct is the name of the svg file
 func newProject() *Project {
 	return &Project{
-		Img:         "htmx",
+		Img:         "test",
 		Title:       "Test Project",
 		Description: "A project I am working on",
 	}
