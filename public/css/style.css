@@ -1,9 +1,9 @@
 .topView{
-    background-color: rgb(60,60,60);
+    background-color: antiquewhite;
     padding: 20px;
     margin: 5px;
     border-radius: 20px;
-    color:antiquewhite;
+    color:black;
 }
 
 .pageContainer{
@@ -18,7 +18,7 @@
 .UI {
     margin: 30px;
     padding: 20px;
-    background-color: antiquewhite;
+    background-color: rgb(60,60,60);
     border-radius: 20px;
     display: flex;
     min-height: 87vh;
@@ -97,4 +97,15 @@
     background-color: antiquewhite;
     border-radius: 5px;
     padding: 5px;
+}
+
+.listedProject{
+    display: flex;
+    align-items: baseline;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
