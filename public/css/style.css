@@ -1,14 +1,15 @@
 .topView{
     background-color: antiquewhite;
-    padding: 20px;
-    margin: 5px;
-    border-radius: 20px;
+    padding: 2vmin;
+    margin: .5vmin;
+    border-radius: 2vmin;
     color:black;
 }
 
 .pageContainer{
+    box-sizing: border-box;
     background-color: rgb(45,45,45);
-    min-height: 100vh;
+    height: 100vh;
     width: 100vw;
     position: absolute;
     top: 0;
@@ -16,16 +17,17 @@
 }
 
 .UI {
-    margin: 30px;
-    padding: 20px;
+    box-sizing: border-box;
+    margin: 2vmin;
+    padding: 2vmin;
     background-color: rgb(60,60,60);
-    border-radius: 20px;
+    border-radius: 2vmin;
     display: flex;
-    min-height: 87vh;
+    height: 96vh;
 }
 
 .aboutme{
-    flex-basis: 15%;
+    flex-basis: 15vw;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -34,31 +36,39 @@
 #story {
     flex-grow:1;
 }
+#links {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
 
 
 
 .main{
-    flex-grow: 95;
+    flex-basis: 85vw;
     display:flex;
     flex-direction: column;
 }
-
-
 
 .projects{
     flex-grow: 1;
     display: flex;
 }
 
+
+
+
 .currentProject{
-    flex-grow: 95;
+    flex-basis: 60vw;
     display: flex;
     justify-content: center;
     flex-direction: column;
     
 }
 .projectList{
-    flex-basis: 20%;
+    flex-basis: 15vw;
+    overflow: hidden;
 }
 
 #title {
@@ -79,17 +89,13 @@
 }
 
 .extras{
-    flex-basis: 15%;
+    flex-basis: 15vh;
+    overflow: hidden;
 }
 
 .techstack{
     display: flex;
     justify-content: center;
-}
-
-#links {
-    display: flex;
-    justify-content: space-evenly;
 }
 
 
@@ -108,4 +114,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+#projectimg img{
+    max-width: 50vw;
+    max-height: 50vh;
+}
+
+.thumbnail{
+    overflow: hidden;
+}
+
+#SelfPhoto img{
+    max-width: 14vw;
+    max-height: 50vh;
 }

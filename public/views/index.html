@@ -15,6 +15,7 @@
 </html>
 {{end}}
 
+
 {{define "ui"}}
 <div class="aboutme topView">
     {{template "about me"}}
@@ -29,7 +30,7 @@
 
 
 {{define "about me"}}
-    <div><img src="/static/images/other/IMG_1954.jpg" alt="Me" width="300" height="300"></div>
+    <div id="SelfPhoto"><img src="/static/images/other/IMG_1954.jpg" alt="Me"></div>
     <div id="story"><h2>Hey! I'm Chris, a San Diego based back-end developer!</h2>
         <p>
             I am currently using Golang for most of my personal projects. I am planning on jumping into Zig, Rust, C, or Carbon next. 
@@ -49,32 +50,7 @@
 {{end}}
 
 
-{{define "projects"}}
-<div class="currentProject topView">
-    {{template "project screen".Project}}
-</div>
-<div class="projectList topView">
-    {{template "list panel" .}}
-</div>
-{{end}}
 
-
-
-
-{{define "project screen"}}
-    <div id="title"><h1>{{.Title}}</h1></div>
-    <div id="projectimg"><a href="{{.Link}}"><img src="/static/images/projects/{{.Img}}.svg" alt="project img" width="500" height="300"></a></div>
-    <div id="description">{{.Description}}</div>
-{{end}}
-
-
-{{ define "list panel"}}
-    <div class="list">
-        {{range .List}}
-            {{template "listed project" .}}
-        {{end}}
-    </div>
-{{end}}
 
 {{define "extra"}}
     <div class="techstack" ><h4>Languages and Databases:</h4></div>
@@ -90,13 +66,4 @@
 
 
 
-{{define "listed project"}} 
-<div class="listedProject">
-    <a href="{{.Link}}"><img src="/static/images/projects/test.svg" alt="project img" width="80" height="80"></a>
-    <div class="info">
-        <div class="listedTitle"><h2>{{.Title}}</h2></div>
-        <div class="listedDescrip">{{.Description}}</div>
-    </div>
 
-</div>
-{{end}}
