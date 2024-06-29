@@ -38,8 +38,7 @@ func StartServer() {
 // Creates page and sends important info created as page struct
 func getPortfolio(c echo.Context) error {
 
-	newPage := newPage()
-	err := c.Render(http.StatusOK, "index", newPage)
+	err := c.Render(http.StatusOK, "index", nil)
 	if err != nil {
 		panic("Couldnt render base index page")
 	}

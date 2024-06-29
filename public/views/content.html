@@ -1,0 +1,38 @@
+{{define "core"}}
+    <div class="sidebar">{{template "sidebar"}}</div>
+    <div class="content">{{template "content"}}</div>
+{{end}}
+
+{{define "sidebar"}}
+ <div class="me">{{template "me"}}</div>
+ <div class="tech">{{template "tech"}}</div>
+{{end}}
+
+
+{{define "content"}}
+ {{template "projects"}}
+{{end}}
+
+{{define "projects"}}
+    <h3>Title</h3>
+    <div>Project</div>
+    <div>Discription</div>
+{{end}}
+
+
+{{define "me"}}
+<div>Picture of me</div>
+<div>Story</div>
+{{end}}
+
+
+
+
+{{define "tech"}}
+<div>
+    <img src="/static/images/logos2/go.svg" alt="Go" width="20" height="20">
+    <img src="/static/images/logos2/go.svg" alt="Go" width="20" height="20"> 
+    <img src="/static/images/logos2/go.svg" alt="Go" width="20" height="20"> 
+    <img src="/static/images/logos2/go.svg" alt="Go" width="20" height="20"> 
+</div>
+{{end}}
