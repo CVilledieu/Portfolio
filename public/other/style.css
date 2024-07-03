@@ -1,0 +1,16 @@
+.container {
+    background-color: (45,45,45);
+    min-height: 100vh;
+    min-width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.bottomlayer {
+    margin: 2vmin;
+    padding: 1vmin;
+    background-color: rgb(60,60,60);
+    border-radius: 2vmin;
+    display: grid;
+}
