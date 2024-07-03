@@ -19,10 +19,10 @@ type Page struct {
 }
 
 type Project struct {
-	Img         string
 	Title       string
 	Description string
 	Link        string
+	Lang        string
 }
 
 func StartServer() {

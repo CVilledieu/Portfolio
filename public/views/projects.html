@@ -9,8 +9,8 @@
 {{end}}
 
 {{define "project screen"}}
-    <div id="title"><h1>{{.Title}}</h1></div>
-    <div id="projectimg"><a href="{{.Link}}"><img src="/static/images/projects/{{.Img}}.png" alt="project img"></a></div>
+    <div id="title"><a href="{{.Link}}"></a><h1>{{.Title}}</h1></a></div>
+    <div id="demo">{{template "Password Generator"}}</div>
     <div id="description">{{.Description}}</div>
 {{end}}
 
@@ -19,18 +19,35 @@
     <div class="list">
         {{range .List}}
             {{template "listed project" .}}
+            
         {{end}}
     </div>
 {{end}}
 
 
 {{define "listed project"}} 
-<div class="listedProject">
-    <div class="thumbnail"><img src="/static/images/projects/test.svg" alt="project img" width="80" height="80"></div>
-    <div class="info">
-        <div class="listedTitle"><a href="{{.Link}}"><h2>{{.Title}}</h2></a></div>
+<div class="listedProject">  
+    <div class="listedTitle"><a href="{{.Link}}"><h2>{{.Title}}</h2></a></div>
+    <div class="info">        
+        <div class="listedLang">{{.Lang}}</div>
         <div class="listedDescrip">{{.Description}}</div>
+        
     </div>
-
+    <div class="listBtns">
+        <img src="/static/images/logos/play.svg" alt="project img" width="30" height="30">
+        <img src="/static/images/logos/bolt.svg" alt="project img" width="30" height="30">
+        <img src="/static/images/projects/test.svg" alt="project img" width="30" height="30">
+    </div>
+    
 </div>
+{{end}}
+
+{{define "Password Generator"}}
+
+<form action="/Password" method="post">
+    <label >Password:</label>
+    <output name="password"></output><br>
+    <input type="submit" value="Submit">
+</form>
+
 {{end}}

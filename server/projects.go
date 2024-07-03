@@ -1,24 +1,24 @@
 package server
 
 func createProjectList() []Project {
-	img := []string{"ProjectPort", "test", "test", "test", "test"}
-	names := []string{"Password Generator", "project 2", "project 3", "project 4", "project 5"}
-	description := []string{"Creates a random password using a random seed and phrase entered by the user.", "Help", "me", "!", "5"}
+	lang := []string{"Go", "Go", "Go", "JS", "Go/JS"}
+	names := []string{"Password Generator", "Personal Database", "Classic Calculator", "project 4", "LeetCode info"}
+	description := []string{"Creates a random password using a random seed and phrase entered by the user.", "A redis database created from scratch", "Cli calculator written", "unpicked project. Something in JS so not everything is in go", "General info of problems work on LeetCode. Samples of different problems."}
 	link := []string{"https://github.com/CVilledieu/PasswordMaker", "#", "#", "#", "#"}
 	list := []Project{}
 	for i, name := range names {
-		list = append(list, newProject(name, description[i], link[i], img[i]))
+		list = append(list, newProject(name, description[i], link[i], img[i], lang[i]))
 	}
 	return list
 }
 
 // Img will be in /static/images/logos/
 // Img property of Project struct is the name of the svg file
-func newProject(name, description, link, img string) Project {
+func newProject(name, description, link, lang string) Project {
 	return Project{
-		Img:         img,
 		Title:       name,
 		Description: description,
 		Link:        link,
+		Lang:        lang,
 	}
 }
