@@ -58,6 +58,6 @@ func newTemplate() *Template {
 func newPage() Page {
 	return Page{
 		Project: createProjectList()[0],
-		List:    createProjectList()[1:],
+		List:    createProjectList(),
 	}
 }

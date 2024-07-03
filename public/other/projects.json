@@ -1,0 +1,24 @@
+{
+    "PASSWORD GENERATOR": {
+        "language": "GO",
+        "description": "Creates a random password using a random seed and phrase entered by the user.",
+        "link": "https://github.com/CVilledieu/PasswordMaker"
+    },
+    "PERSONAL DATABASE": {
+        "language": "GO",
+        "description": "A redis database created from scratch.",
+        "link": ""
+    },
+    "Project 4":{
+        "language": "JS",
+        "description": "unpicked project. Something in JS, so not all of the displayed projects are in GO.",
+        "link": ""
+    },
+
+    "LEETCODE INFO": {
+        "language": "GO/JS",
+        "description": "Sample Leetcode problems.",
+        "link": ""
+    }
+
+}

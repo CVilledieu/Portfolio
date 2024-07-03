@@ -27,16 +27,16 @@
 
 {{define "listed project"}} 
 <div class="listedProject">  
-    <div class="listedTitle"><a href="{{.Link}}"><h2>{{.Title}}</h2></a></div>
+    <div class="listedTitle"><h2>{{.Title}}</h2></div>
     <div class="info">        
         <div class="listedLang">{{.Lang}}</div>
         <div class="listedDescrip">{{.Description}}</div>
         
     </div>
     <div class="listBtns">
-        <img src="/static/images/logos/play.svg" alt="project img" width="30" height="30">
-        <img src="/static/images/logos/bolt.svg" alt="project img" width="30" height="30">
-        <img src="/static/images/projects/test.svg" alt="project img" width="30" height="30">
+        <a href="http://" target="_blank" rel="noopener noreferrer"><img src="/static/images/logos/play.svg" alt="project img" width="30" height="30"></a>
+        <a href="{{.Link}}"><img src="/static/images/logos/bolt.svg" alt="project img" width="30" height="30"></a>
+        <a href=""><img src="/static/images/projects/test.svg" alt="project img" width="30" height="30"></a>
     </div>
     
 </div>
