@@ -1,5 +1,11 @@
 package server
 
+import (
+	"encoding/json"
+	"fmt"
+	"os"
+)
+
 func createProjectList() []Project {
 	lang := []string{"Go", "Go", "JS", "Go/JS"}
 	names := []string{"Password Generator", "PERSONAL DATABASE", "project 4", "LEETCODE INFO"}
@@ -21,4 +27,17 @@ func newProject(name, description, link, lang string) Project {
 		Link:        link,
 		Lang:        lang,
 	}
+}
+
+func getProjectJSON() []Project {
+	bData, err := os.ReadFile("/static/other/projects.json")
+	if err != nil {
+		fmt.Println("Panic! but like dont actually. There was an error in the json")
+	}
+	var list []Project
+	err = json.Unmarshal(bData, &list)
+	if err != nil {
+		fmt.Println("Panic! but like dont actually. There was an error in the json")
+	}
+	return list
 }

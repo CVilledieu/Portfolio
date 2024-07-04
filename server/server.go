@@ -1,6 +1,7 @@
 package server
 
 import (
+	"fmt"
 	"html/template"
 	"io"
 	"net/http"
@@ -29,6 +30,8 @@ func StartServer() {
 	e := echo.New()
 	e.Static("/static", "public")
 	e.Renderer = newTemplate()
+
+	fmt.Println(getProjectJSON())
 
 	e.GET("/", getPortfolio)
 
