@@ -1,7 +1,6 @@
 package server
 
 import (
-	"fmt"
 	"html/template"
 	"io"
 	"net/http"
@@ -17,13 +16,7 @@ type Template struct {
 type Page struct {
 	Project Project
 	List    []Project
-}
-
-type Project struct {
-	Title       string
-	Description string
-	Link        string
-	Lang        string
+	Index   int
 }
 
 func StartServer() {
@@ -31,17 +24,27 @@ func StartServer() {
 	e.Static("/static", "public")
 	e.Renderer = newTemplate()
 
-	fmt.Println(getProjectJSON())
-
-	e.GET("/", getPortfolio)
+	e.GET("/", getHome)
+	e.GET("/1", getProject)
 
 	e.Logger.Fatal(e.Start(":8080"))
 }
 
 // Creates page and sends important info created as page struct
-func getPortfolio(c echo.Context) error {
+func getHome(c echo.Context) error {
 
-	newPage := newPage()
+	newPage := newPage(0)
+	err := c.Render(http.StatusOK, "index", newPage)
+	if err != nil {
+		panic("Couldnt render base index page")
+	}
+	return err
+}
+
+// Creates page and sends important info created as page struct
+func getProject(c echo.Context) error {
+	index := 1
+	newPage := newPage(index)
 	err := c.Render(http.StatusOK, "index", newPage)
 	if err != nil {
 		panic("Couldnt render base index page")
@@ -58,9 +61,11 @@ func newTemplate() *Template {
 	}
 }
 
-func newPage() Page {
+// i is set to 0 for the home page and grabs the first index of the JSON.
+// User picks what project they want to have selected. getProject() calls newPage() with the new index
+func newPage(i int) Page {
 	return Page{
-		Project: createProjectList()[0],
-		List:    createProjectList(),
+		Project: getProjectJSON()[i],
+		List:    getProjectJSON(),
 	}
 }

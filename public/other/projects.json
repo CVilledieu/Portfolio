@@ -1,4 +1,11 @@
-[{
+[
+    {
+    "Title":"PASSWORD GENERATOR",
+    "Lang": "GO",
+    "Description": "Creates a random password using a random seed and phrase entered by the user.",
+    "Link": "https://github.com/CVilledieu/PasswordMaker"
+    },
+    {
 
     "Title":"PERSONAL DATABASE",
     "Lang": "GO",
@@ -6,7 +13,7 @@
     "Link": ""
 },
 {
-    "Title": "Project 4",
+    "Title": "Project 3",
     "Lang": "JS",
     "Description": "unpicked project. Something in JS, so not all of the displayed projects are in GO.",
     "Link": ""
@@ -17,11 +24,5 @@
     "Lang": "GO/JS",
     "Description": "Sample Leetcode problems.",
     "Link": ""
-},
-
-{
-    "Title":"PASSWORD GENERATOR",
-    "Lang": "GO",
-    "Description": "Creates a random password using a random seed and phrase entered by the user.",
-    "Link": "https://github.com/CVilledieu/PasswordMaker"
-}]
+}
+]

@@ -10,7 +10,10 @@
 
 {{define "project screen"}}
     <div id="title"><a href="{{.Link}}"></a><h1>{{.Title}}</h1></a></div>
-    <div id="demo">{{template "Password Generator"}}</div>
+    <div id="demo">
+        {{template "Password Generator"}}
+    </div>
+    <div id="lang">Language: {{.Lang}}</div>
     <div id="description">{{.Description}}</div>
 {{end}}
 
@@ -34,7 +37,7 @@
         
     </div>
     <div class="listBtns">
-        <a href="http://" target="_blank" rel="noopener noreferrer"><img src="/static/images/logos/play.svg" alt="project img" width="30" height="30"></a>
+        <a href="/2" target="_blank"><img src="/static/images/logos/play.svg" alt="project img" width="30" height="30"></a>
         <a href="{{.Link}}"><img src="/static/images/logos/bolt.svg" alt="project img" width="30" height="30"></a>
         <a href=""><img src="/static/images/projects/test.svg" alt="project img" width="30" height="30"></a>
     </div>
@@ -42,7 +45,7 @@
 </div>
 {{end}}
 
-{{define "Password Generator"}}
+{{define "PASSWORD GENERATOR"}}
 
 <form action="/Password" method="post">
     <label >Password:</label>
@@ -50,4 +53,23 @@
     <input type="submit" value="Submit">
 </form>
 
+{{end}}
+
+
+{{define "PERSONAL DATABASE"}}
+ Demo of the personal database 
+ Some kind of form interaction
+{{end}}
+
+
+{{define "Project 3"}}
+Figure out what to show as third project and how to show it
+{{end}}
+
+{{define "LEETCODE INFO"}}
+Info dump basically. 
+    Show problem
+    link to the problem
+    show answer
+    explain how and why answer
 {{end}}
