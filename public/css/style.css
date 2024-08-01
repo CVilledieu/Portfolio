@@ -9,7 +9,7 @@
 
 .pageContainer{
     box-sizing: border-box;
-    background-color: rgb(45,45,45);
+    background-color: rgb(0,0,0);
     height: 100vh;
     width: 100vw;
     position: absolute;

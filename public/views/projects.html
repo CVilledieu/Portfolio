@@ -9,9 +9,10 @@
 {{end}}
 
 {{define "project screen"}}
-    <div id="title"><a href="{{.Link}}"></a><h1>{{.Title}}</h1></a></div>
+    <div id="title"><a href="{{.Link}}"></a><h2>{{.Title}}</h2></a></div>
     <div id="demo">
-        {{template "Password Generator"}}
+         {{template  "PASSWORD GENERATOR"}}
+
     </div>
     <div id="lang">Language: {{.Lang}}</div>
     <div id="description">{{.Description}}</div>
@@ -32,7 +33,6 @@
 <div class="listedProject">  
     <div class="listedTitle"><h2>{{.Title}}</h2></div>
     <div class="info">        
-        <div class="listedLang">{{.Lang}}</div>
         <div class="listedDescrip">{{.Description}}</div>
         
     </div>
