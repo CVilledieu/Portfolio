@@ -1,4 +1,3 @@
-//import ContentStyle from "/static/content/content";
 class Theme {
     constructor(Background_color, Primary_color, Secondary_color, Accent_color) {
         this.Background_color = Background_color;
@@ -16,7 +15,7 @@ let lightTheme = new Theme("#FFFFFF", "#000000", "#FFFFFF", "#FF0000");
 const ThemeCheckbox = document.createElement("input");
 ThemeCheckbox.setAttribute("type", "checkbox");
 ThemeCheckbox.setAttribute("class", "theme-checkbox");
-//ThemeCheckbox.setAttribute("checked", "true");
+
 ThemeCheckbox.addEventListener("change", ChangeTheme);
 
 function ChangeTheme() {
@@ -37,7 +36,3 @@ function setTheme(theme) {
 
 
 setTheme(darkTheme);
-
-const root = document.getElementById("root");
-
-root.appendChild(ThemeCheckbox);

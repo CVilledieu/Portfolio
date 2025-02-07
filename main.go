@@ -1,7 +1,10 @@
 package main
 
-import "Site/server"
+import (
+	"Site/server"
+)
 
 func main() {
+
 	server.Init()
 }

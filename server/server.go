@@ -3,8 +3,10 @@ package server
 import (
 	"io"
 	"net/http"
+	"os"
 	"text/template"
 
+	"github.com/joho/godotenv"
 	"github.com/labstack/echo/v4"
 )
 
@@ -13,7 +15,12 @@ func Init() {
 	e.Static("/static", "app")
 	e.Renderer = NewTemplate()
 	e.GET("/", mainHandler)
-	e.Logger.Fatal(e.Start(":8080"))
+	err := godotenv.Load()
+	if err != nil {
+		e.Logger.Fatal("Error loading .env file")
+	}
+	PORT := os.Getenv("PORT")
+	e.Logger.Fatal(e.Start(PORT))
 }
 
 type Template struct {
@@ -21,7 +28,7 @@ type Template struct {
 }
 
 func NewTemplate() *Template {
-	return &Template{templates: template.Must(template.ParseGlob("app/*/*.html"))}
+	return &Template{templates: template.Must(template.ParseGlob("app/views/*.html"))}
 }
 
 func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Context) error {

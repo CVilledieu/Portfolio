@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/static/views/style.css">
+    <title>My Portfoilo</title>
 </head>
 <body>
     {{template "content" .}}
@@ -17,9 +18,7 @@
 
 <div id="root">
     <script src="/static/js/index.js"></script>
-    {{template "header" }}
     {{template "core" .}}
-    {{template "footer" }} 
 </div>
 {{end}}
 
