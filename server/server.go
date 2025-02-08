@@ -28,7 +28,7 @@ type Template struct {
 }
 
 func NewTemplate() *Template {
-	return &Template{templates: template.Must(template.ParseGlob("app/views/*.html"))}
+	return &Template{templates: template.Must(template.ParseGlob("app/*.html"))}
 }
 
 func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
