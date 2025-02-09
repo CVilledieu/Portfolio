@@ -1,19 +1,4 @@
 
-
-export function Aboutme() {
-    let aboutmeDv = document.createElement("div");
-    aboutmeDv.setAttribute("id", "aboutme");
-    let title = document.createElement("h1");
-    title.textContent = "About Me";
-    let description = document.createElement("p");
-    description.textContent = "I am a web developer";
-    aboutmeDv.appendChild(title);
-    aboutmeDv.appendChild(description);
-    return aboutmeDv;
-}
-
-
-
 function getProjects() {
     return [
         {
@@ -31,9 +16,15 @@ function getProjects() {
     ];
 }
 
-export function ProjectCards() {
-    let projectsDv = document.createElement("div");
-    projectsDv.setAttribute("id", "projects");
+function projectTray() {
+    let tray = document.createElement("div");
+    tray.setAttribute("class", "tray");
+    tray.setAttribute("id", "projects");
+    return tray;
+}
+
+function ProjectCards() {
+    let projectsDv = projectTray();
     getProjects().forEach(project => {
         let projectDv = document.createElement("div");
         projectDv.setAttribute("class", "project");
@@ -48,14 +39,7 @@ export function ProjectCards() {
     return projectsDv
 }
 
-
-export function contentWrapper() {
-    let contentDv = document.createElement("div");
-    contentDv.setAttribute("id", "content");
-    contentDv.appendChild(Aboutme());
-    contentDv.appendChild(ProjectCards());
-    return contentDv;
-}
+export {ProjectCards};
 
 
 
