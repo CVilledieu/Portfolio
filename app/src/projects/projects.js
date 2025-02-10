@@ -1,4 +1,3 @@
-import {NewTabSelector} from "/static/src/util/util.js";
 //Template for the project catagory.
 //Name of variable should be the name of the project catagory.
 //NOTE: Projects are currently in an array of anonymous objects. Creating an actual object may not be needed
