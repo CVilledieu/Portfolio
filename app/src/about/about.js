@@ -3,7 +3,7 @@ import { AddCssLink } from "/static/src/util/util.js";
 
 function aboutMeDescription() {
     let description = document.createElement("p");
-    description.textContent = "I'm a developer who loves the more technical side of develpmont and coding. I started coding when I was younger wanting to be a game dev, but found life took me in a different direction. I've been working in the tech industry for over 10 years now and have worked on a variety of projects from web development to mobile apps. I'm always looking to learn new things and expand my knowledge.";
+    description.textContent = "Lorem ipsum odor amet, consectetuer adipiscing elit. Metus maecenas suspendisse urna ornare suscipit tortor. Elit nunc rutrum habitasse mus metus porta vestibulum vivamus eu. Elementum volutpat odio inceptos aliquam leo justo class natoque. Metus senectus justo malesuada urna rutrum lobortis neque quis. Lacus arcu nostra mauris arcu senectus. Proin vulputate nullam fusce rhoncus interdum iaculis nulla tempus sollicitudin.";
     return description;
 }
 

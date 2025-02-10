@@ -1,13 +1,18 @@
 import {ThemeCheckbox, SocialWrapper} from "/static/src/util/util.js";
 import {Aboutme} from "/static/src/about/about.js";
-import {ProjectCards} from "/static/src/content.js";
+import ProjectCards from "/static/src/projects/projects.js";
+import MustHaves from "/static/src/about/musthaves.js";
 
 
 function ContentWrapper() {
     let contentDv = document.createElement("div");
     contentDv.setAttribute("id", "content");
-    contentDv.appendChild(Aboutme());
-    contentDv.appendChild(ProjectCards());
+    let contentArray = [Aboutme(), ProjectCards(), MustHaves()];
+    let spacer = document.createElement("div");
+    spacer.setAttribute("class", "spacer");
+    contentArray.forEach(content => {
+        contentDv.appendChild(content);
+    });
     return contentDv;
 }
 

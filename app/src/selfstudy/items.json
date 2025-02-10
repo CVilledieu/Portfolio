@@ -1,0 +1,35 @@
+{
+"name": "root",
+"children": [{
+    "name": "Physical",
+    "children": [{
+        "name": "Books",
+        "children": [{
+            "name": "Language Specific",
+            "children": []
+            },
+            {
+            "name": "General",
+            "children": []
+            }]
+        },  
+        {
+        "name": "Other",
+        "children": []
+        }]
+    },
+    {
+    "name": "Non-Physical",
+    "children": [
+        {
+        "name": "Websites",
+        "children": []
+        },
+        {
+        "name": "Apps",
+        "children": []
+        }
+    ]
+    }
+]
+}

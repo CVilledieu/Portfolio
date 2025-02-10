@@ -58,7 +58,7 @@ ThemeCheckbox.setAttribute("class", "theme-checkbox");
 ThemeCheckbox.addEventListener("change", ChangeTheme);
 
 //set the default values for the themes
-let darkTheme = new Theme("#222831", "#31363F", "#76ABAE", "#EEEEEE", "#EEEEEE");
+let darkTheme = new Theme("#61677A", "#D8D9DA", "#FFF6E0", "#2C3333", "#272829");
 let lightTheme = new Theme("#98D8EF", "#EAE2C6", "#BFBBA9", "#ADA991", "#000000");
 let currentTheme = darkTheme;
 SetOppositeTheme();
@@ -111,4 +111,61 @@ function SocialWrapper() {
     return socialDv;
 }
 
-export { ThemeCheckbox, SocialWrapper };
+
+function indicatorWidth(n, p) {
+    let w = 320;
+    let x = w - (p*n + p);
+    return x/n;
+}
+
+function NewTabSelector(...Names) {
+    if (Names.length > 4) {
+        console.error("Too many tabs, max is 4");
+        return null;
+    } 
+
+    let tabContainer = document.createElement("div");
+    tabContainer.setAttribute("class", "tab-container");
+    let gap = 2;
+    let iWidth = indicatorWidth(Names.length, gap);
+    Names.forEach((name, index) => {
+        let tab = document.createElement("input");
+        tab.setAttribute("type", "radio");
+        tab.setAttribute("name", "tab");
+        tab.setAttribute("id", "tab-" + name);
+        tab.setAttribute("class", "tab tab-" + name);
+        let label = document.createElement("label");
+        label.setAttribute("class", "tab_label");
+        label.setAttribute("for", "tab-" + name);
+        label.textContent = name;
+        tabContainer.appendChild(tab);
+        tabContainer.appendChild(label);
+        const style = document.createElement("style");
+        style.innerHTML = `
+        .tab-${name}:checked ~ .indicator {
+            left: ${(index * iWidth) + gap}px;
+        }`
+        tabContainer.appendChild(style);
+    });
+
+    let indicator = document.createElement("div");
+    indicator.setAttribute("class", "indicator");
+    tabContainer.appendChild(indicator);
+    indicator.style.width = iWidth + "px";
+    return tabContainer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+export { ThemeCheckbox, SocialWrapper, NewTabSelector };
+
+
