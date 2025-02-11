@@ -96,9 +96,6 @@ function newTabSelector(...Names) {
             left: ${(index * iWidth) + gap}px;
         }`
         tabContainer.appendChild(style);
-        tab.addEventListener("checked", () => { 
-            updateForm(name);
-        });
     });
 
     let indicator = document.createElement("div");
@@ -107,6 +104,20 @@ function newTabSelector(...Names) {
     indicator.style.width = iWidth + "px";
     return tabContainer;
 }
+
+const bookBtn = document.getElementById("tab-Books");
+const websiteBtn = document.getElementById("tab-Websites");
+const otherBtn = document.getElementById("tab-Other");
+
+bookBtn.addEventListener("click", () => {
+    updateForm("Books");
+});
+websiteBtn.addEventListener("click", () => {
+    updateForm("Websites");
+});
+otherBtn.addEventListener("click", () => {
+    updateForm("Other");
+});
 
 function updateForm(name) {
     let list = document.getElementById("itemsList");
