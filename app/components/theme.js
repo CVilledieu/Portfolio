@@ -5,32 +5,40 @@ function setTheme(theme) {
 
 function InitTheme() {
     const localTheme = localStorage.getItem('theme');
+    
     if (localTheme !== null) {
         setTheme(localTheme);
-    }
-    const prefrence = window.matchMedia('(prefers-color-scheme: dark)');
-    if (prefrence.matches) {
-        setTheme('dark');
     } else {
-        setTheme('light');
+        const prefrence = window.matchMedia('(prefers-color-scheme: dark)');
+        if (prefrence.matches) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
     }
-
+    
 }
+
 
 function ThemeSwitch() {
     const themeSwitch = document.createElement("input");
     themeSwitch.setAttribute("type", "checkbox");
-    themeSwitch.setAttribute("class", "theme-switch");
+    themeSwitch.setAttribute("class", "theme-checkbox");
+    themeSwitch.setAttribute("id", "theme-checkbox");
     themeSwitch.addEventListener("change", changeTheme);
+    if (localStorage.getItem("theme") === "light") {
+        themeSwitch.setAttribute("checked", "true");
+    }
     return themeSwitch;
 }
 
 function changeTheme() {
-    const currentTheme = document.html.getAttribute("theme");
+    const page = document.querySelector("html");
+    const currentTheme = page.getAttribute("theme");
     if (currentTheme === "light") {
-        document.html.setAttribute("theme", "dark");
+        setTheme("dark");
     } else {
-        document.html.setAttribute("theme", "light");
+        setTheme("light");
     }
 }
 

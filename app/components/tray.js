@@ -1,7 +1,7 @@
-export default function Tray(Name, Conent) {
-    let tray = document.createElement("div");
+export default function Tray(name, content) {
+    const tray = document.createElement("div");
     tray.setAttribute("class", "tray");
-    tray.setAttribute("id", Name+"-tray");
-    tray.appendChild(Conent);
+    tray.setAttribute("id", name+"-tray");
+    tray.appendChild(content);
     return tray;
 }
