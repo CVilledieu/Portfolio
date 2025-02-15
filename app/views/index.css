@@ -1,14 +1,16 @@
-@import "/static/views/styles/contacts.css";
 @import "/static/views/styles/study.css";
 @import "/static/views/styles/theme.css";
-@import "/static/views/styles/projectCard.css";
+@import "/static/views/styles/project.css";
+@import "/static/views/styles/columns.css";
 
 
 body{
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    transition: background-color 0.4s, color 0.4s;
+}
+.dev{
+  border: 1px solid red;
 }
 
 #root {
@@ -23,50 +25,52 @@ body{
     transition: background-color 0.4s, color 0.4s;
   }
 
-.chunk{
-  height: 50vh;
-  display: flex;
-}
 
-#first-chunk {
-    padding: 20px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  color: var(--secondary-color);
+#contacts-dv {
+  position: absolute;
+  top: 1em;
+  right: 1.5em;
 }
-
-#second-chunk {
-    padding: 20px;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
 
 #third-chunk {
-  min-width: 95%;
-    padding: 20px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  background-color: var(--primary-color);
-    
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: var(--primary-color);  
 }
 
-#header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-content: flex-end;
 
+#theme-switch-container {
+  padding-top: 10px;
 }
 
-#contacts{
-    display: flex;
-    gap: 5px;
+
+#intro-buffer {
+  height: 25vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
+#intro {
+  padding: 1vw;
+  max-width: 40vw;
+  display: flex;
+  flex-direction: column-reverse;
+  color: var(--accent-color);
+  border-radius: 5px;
+}
+
+#intro-welcome {
+  font-size: 6vh;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
+}
+#intro-phrase {
+  font-size: 3vh;
+  font-weight: 500;
+  left: 2vw;
+  position: relative;
+}

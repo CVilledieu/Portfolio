@@ -6,10 +6,21 @@ export default function ThirdChunk() {
     const content = document.createElement("div");
     content.setAttribute("class", "chunk");
     content.setAttribute("id", "third-chunk");
-    const exampleCard = projectCard(projectExample);
-    content.appendChild(exampleCard);
+    content.appendChild(displayProjects());
     return content;
 }
+
+function displayProjects() {
+    const display = document.createElement("div");
+    display.setAttribute("id", "projects-display");
+    const projects = [projectExample, projectExample, projectExample];
+    projects.forEach(project => {
+        const card = projectCard(project);
+        display.appendChild(card);
+    });
+    return display;
+}
+
 
 function projectCard(project) {
     const card = document.createElement("div");

@@ -21,6 +21,8 @@ function InitTheme() {
 
 
 function ThemeSwitch() {
+    const themeSwitchContainer = document.createElement("div");
+    themeSwitchContainer.setAttribute("id", "theme-switch-container");
     const themeSwitch = document.createElement("input");
     themeSwitch.setAttribute("type", "checkbox");
     themeSwitch.setAttribute("class", "theme-checkbox");
@@ -29,7 +31,8 @@ function ThemeSwitch() {
     if (localStorage.getItem("theme") === "light") {
         themeSwitch.setAttribute("checked", "true");
     }
-    return themeSwitch;
+    themeSwitchContainer.appendChild(themeSwitch);
+    return themeSwitchContainer;
 }
 
 function changeTheme() {
