@@ -4,7 +4,6 @@ body {
     margin: 0;
 }
 
-
 #root {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -19,35 +18,72 @@ body {
 }
 
 .row {
-    max-width: 90vw;
+    max-width: 95vw;
     max-height: 45vh;
     width: 90vw;
     height: 45vh;
     display: flex;
     flex-direction: row;
+    gap: calc(5vw / 3);
 }
-
 #welcome-banner {
     display: flex;
-    flex-direction: column-reverse;
-    max-width: 50vw;
-    width: 50vw;
+    justify-content: center;
+    max-width: 40vw;
+    width: 40vw;
 }
 
-#language-block {
+#intro {
+    width: 35vw;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    font-weight: 600;
+}
+#intro-welcome {
+    align-items: flex-end;
+    font-size: 3vw;
+    align-self: flex-end;
+}
+
+#intro-phrase {
+    font-size: 1.5vw;
+    transform: translateY(-1.5rem) rotate(-10deg);
+    
+}
+
+
+.block-top {
+    align-self: center;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 30vw;
-    width: 30vw;
-    max-height: 100%;
-    padding: 1rem;
+
+    max-width: 25vw;
+    width: 25vw;
+    max-height: 25vh;
+    height: 25vh;
 }
 
-#languages-div {
+.block-bottom {
+    align-self: center;
+
     display: flex;
-    flex-direction: row;
-    
+    justify-content: center;
+    align-items: center;
+
+    max-width: 25vw;
+    width: 25vw;
+    max-height: 35vh;
+    height: 35vh;
+}
+
+.inner-block {
+
+    display: flex;
+    flex-direction: column;
+
     width: 90%;
     height: 90%;
 
@@ -55,10 +91,33 @@ body {
 
     border-radius: 15px;
     background-color: var(--primary-color);
+
 }
 
+
 #link-block {
+
     display: flex;
+    align-self: center;
+    
     max-width: 10vw;
     width: 10vw;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    max-width: 40vw;
+    width: 40vw;
+    max-height: 40vh;
+    height: 40vh;
+}
+
+#projects-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
