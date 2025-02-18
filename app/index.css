@@ -121,3 +121,9 @@ body {
     flex-direction: row;
     justify-content: space-around;
 }
+
+.block-title {
+    align-self: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}

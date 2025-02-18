@@ -10,7 +10,7 @@ function topRow() {
     content.setAttribute("class", "row");
     const welcomeBanner = document.createElement("div");
     welcomeBanner.setAttribute("id", "welcome-banner")
-    welcomeBanner.appendChild(intro("Welcome to my site!", "Golang, JS, and so much more!"));
+    welcomeBanner.appendChild(intro("Welcome to my site!", "Golang, Rust, JS, and so much more!"));
     const languageBlock = document.createElement("div");
     languageBlock.setAttribute("class", "block-top");
     languageBlock.setAttribute("id", "language-block");
@@ -48,7 +48,7 @@ function hotTakes() {
     content.setAttribute("class", "inner-block");
     content.setAttribute("id", "hot-takes-div");
     const title = document.createElement("div");
-    title.setAttribute("class", "title");
+    title.setAttribute("class", "block-title ");
     title.textContent = "Opinions / General thoughts on tech topics";
     content.appendChild(title);
     return content;
@@ -59,7 +59,7 @@ function languages() {
     content.setAttribute("id", "languages-div");
     content.setAttribute("class", "inner-block");
     const title = document.createElement("div");
-    title.setAttribute("class", "title");
+    title.setAttribute("class", "block-title ");
     title.setAttribute("id", "langauges-title");
     title.textContent = "Languages";
     const display = document.createElement("div");
@@ -98,7 +98,7 @@ function aboutMe() {
     content.setAttribute("id", "about-div");
     content.setAttribute("class", "inner-block");
     const title = document.createElement("div");
-    title.setAttribute("class", "title");
+    title.setAttribute("class", "block-title ");
     title.textContent = "About Me";
     const aboutText = document.createElement("span");
     aboutText.textContent = "Example text about me. I am a backend developer with experience in Go, Python, and Java. I have experience with databases, cloud services, and more.";
@@ -112,7 +112,7 @@ function experience() {
     content.setAttribute("id", "experience-div");
     content.setAttribute("class", "inner-block");
     const title = document.createElement("div");
-    title.setAttribute("class", "title");
+    title.setAttribute("class", "block-title ");
     title.textContent = "Experience";
     const display = document.createElement("div");
     display.setAttribute("id", "experience-display");
@@ -130,8 +130,8 @@ function projects() {
     type1.setAttribute("class", "project-type");
     type1.setAttribute("id", "type-1");
     const title1 = document.createElement("div");
-    title1.setAttribute("class", "title");
-    title1.textContent = "Go";
+    title1.setAttribute("class", "block-title");
+    title1.innerText = "Go";
     const p1display = document.createElement("div");
     p1display.setAttribute("id", "projects-display");
     type1.appendChild(title1);
@@ -141,8 +141,8 @@ function projects() {
     type2.setAttribute("class", "project-type");
     type2.setAttribute("id", "type-2");
     const title2 = document.createElement("div");
-    title2.setAttribute("class", "title");
-    title2.textContent = "JS";
+    title2.setAttribute("class", "block-title");
+    title2.innerText = "JS";
     const p2display = document.createElement("div");
     p2display.setAttribute("id", "projects-display");
     type2.appendChild(title2);
@@ -152,8 +152,8 @@ function projects() {
     type3.setAttribute("class", "project-type");
     type3.setAttribute("id", "type-3");
     const title3 = document.createElement("div");
-    title3.setAttribute("class", "title");
-    title3.textContent = "Other";
+    title3.setAttribute("class", "block-title");
+    title3.innerText = "Other";
     const p3display = document.createElement("div");
     p3display.setAttribute("id", "projects-display");
     type3.appendChild(title3);
