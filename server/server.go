@@ -15,6 +15,8 @@ func Init() {
 	e.Static("/static", "app")
 	e.Renderer = NewTemplate()
 	e.GET("/", mainHandler)
+	e.GET("/quotes", quotesHandler)
+	e.GET("/data", dataHandler)
 	err := godotenv.Load()
 	if err != nil {
 		e.Logger.Fatal("Error loading .env file")
@@ -37,4 +39,14 @@ func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Con
 
 func mainHandler(c echo.Context) error {
 	return c.Render(http.StatusOK, "index", nil)
+}
+
+func dataHandler(c echo.Context) error {
+	return c.Render(http.StatusOK, "data", nil)
+}
+
+func quotesHandler(c echo.Context) error {
+	return c.JSON(http.StatusOK, map[string]string{
+		"quote": "The only way to do great work is to love what you do.",
+	})
 }
