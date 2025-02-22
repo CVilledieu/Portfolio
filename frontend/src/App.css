@@ -2,32 +2,152 @@ body {
   margin: 0;
   color: #fff;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  background-image: linear-gradient(to bottom, #020917, #101725);
 }
 
-#root {
+#root{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #262626;
+}
+
+#app {
+  align-self: center;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90%;
+  max-height: 90%;
   width: 100vw;
+  max-width: 100vw;
 }
 
-#side-block {
-  display: flex;
-  flex-direction: column;
-  width: 25vw;
-  height: 100vh;
-}
-
-
-
+/* Main block is the div used for selected content. All content that should be displayed will replace the inner html */
+/* All CSS for the content displayed within main is wihtin the respective folders inside views */
 #main-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 75vw;
-  height: 90vh;
+  width: 80%;
+  height: 100%;
+  max-height: 100%;
+  max-width: 80%;
+}
+
+/* Contains the Nav div*/
+#side-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 20%;
+  max-width: 20%;
+  height: 100%;
+  max-height: 100%;
+}
+
+
+
+#nav-block {
+  height: 85%;
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 1.5rem;
+  
+
+}
+
+#nav-inner{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%
+}
+
+#stage-select {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+
+  min-width: fit-content;
+  width: 100%;
+}
+
+
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  border-radius: 10px;
+}
+
+
+
+.nav-btn {
+  width: 100%;
+  background: #54aba8;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.nav-btn:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+
+#nav-footer {
+  height: 20%;
+}
+
+.contact-row {
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.contact-btn {
+  width: 40%;
+  max-width: 40%;
+  background: #54aba8;
+
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+}
+
+.contact-btn:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.contact-btn:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
 }

@@ -1,0 +1,12 @@
+#github-svg{
+    width: 100%;
+    height: 100%;
+}
+
+#github-svg path{
+    fill: #000;
+}
+
+#github-svg rect{
+    fill:#54aba8;
+}

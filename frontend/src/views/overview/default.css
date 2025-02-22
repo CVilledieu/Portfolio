@@ -1,0 +1,60 @@
+#overview-div{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    height: 100%;
+    width: 95%;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+.block.overview{
+    
+    height: 80%;
+    max-height: 80%;
+
+    max-width: 30%;
+    width: 30%;
+}
+
+.inner-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+
+.overview-name {
+    align-self: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.overview-description {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+#contact-info-overview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+}
+
+.overview-description {
+    padding: 2rem;
+}
