@@ -3,10 +3,18 @@ import {Comments} from './data.js';
 import React, {useState} from 'react';
 
 export default function CommentsPage() {
+    const cList = Comments.map(com => {
+        return(
+          <div className='comment-stack-title' key={com.id}>
+            {com.Title}
+        </div>  
+        )
+        
+    });
     return (
-        <div id="comments-div">
+        <div id="comments-page">
             <div id="comment-stack">
-                <p>Comment title</p>
+                {cList}
             </div>
             <div id="corkboard">
                 <p>corkboard content</p>
@@ -16,14 +24,8 @@ export default function CommentsPage() {
 }
 
 
-function temp() {
-
-    const [index, setIndex] = useState(0);
-    const cList = Comments.map(com => {
-        <DisplayComment>
-            {com.Title}
-        </DisplayComment>
-    });
+function CreateList() {
+    
     return (
         <div id="comments-div">
             <div id="comment-stack">
@@ -43,3 +45,5 @@ function DisplayComment({children}) {
         </div>
     );
 }
+
+

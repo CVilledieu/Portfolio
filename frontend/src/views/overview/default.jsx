@@ -1,12 +1,13 @@
 import './default.css';
+import {Comments} from '../comments/data.js';
 
 
-export default function DefaltPage() {
+export default function DefaultPage() {
     return (
         <div id="overview-div">
           <div className="row" id="top-row">
             <Languages />
-            <Comments />
+            <CommentsBlock />
             {blank()}
           </div>
           <div className="row" id="bottom-row">
@@ -19,16 +20,14 @@ export default function DefaltPage() {
 }
 
 class overviewInfo {
-    static id = 0;
     constructor(name, overview) {
-        this.id = overviewInfo.id++;
         this.Name = name;
         this.Overview = overview;
     }
 
     block() {
         return (
-            <div id={"block-" + this.id} className="block overview">
+            <div className="block overview">
                 <div className="inner-block">
                     <div className='overview-name'>{this.Name}</div>
                     <div className='overview-description'>{this.Overview}</div>
@@ -43,7 +42,7 @@ const Contact = () => {
         "Contact Me",
         <div id="contact-info-overview">
             <div>Email: cvilledieu@proton.me</div>
-            <div>Phone: (619)933-6714 </div>
+            <div>Phone: (619)-933-6714 </div>
         </div>
     );
     return contact.block();
@@ -61,10 +60,16 @@ const Languages = () => {
     return lang.block();
 }
 
-const Comments = () => {
+const CommentsBlock = () => {
+    const i = Math.floor(Math.random() * Comments.length);
+    const comment = Comments[i];
+
     const thoughts = new overviewInfo (
-        "Thoughts/Opinions", 
-        "Here are some of my thoughts..."
+        `${comment.Title}`, 
+        <div id="overview-comments-summary">
+            {comment.Summary}
+        </div>
+
     );
     return thoughts.block(); 
 }
