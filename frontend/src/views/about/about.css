@@ -1,0 +1,36 @@
+#about-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 90%;
+    width: 90%;
+    border-radius: 20px;
+    padding: 0 2cqw;
+}
+
+#about-filler-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#about-content {
+    display: flex;
+    flex-direction: column;
+    padding: 5cqh 2cqw;
+    border-radius: 20px;
+    background-color: var(--panel-bg);
+
+}
+
+#profile-pic {
+
+    max-width: 20cqh;
+    max-height: 20cqw;
+    border-radius: 10%;
+    margin: 1rem;
+}
+
+

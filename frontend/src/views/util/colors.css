@@ -1,4 +1,11 @@
-root {
+:root {
+--text: #f2e3e4;
+--background: #262626;
+--primary: #d2a3a4;
+--secondary: #ededed;
+--accent: #54aba8;
+--panel-bg: rgba(255, 255, 255, 0.03);
+
 --text-50: #f7eeee;
 --text-100: #efdcdd;
 --text-200: #dfb9bc;
@@ -58,4 +65,17 @@ root {
 --accent-800: #224443;
 --accent-900: #112222;
 --accent-950: #081111;
+}
+
+.prime1 {
+    background-color: var(--primary);
+}
+
+.prime1.selected {
+    background-color: var(--secondary);
+
+}
+
+.accent-tc {
+    color: var(--accent-400);
 }

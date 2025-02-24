@@ -1,14 +1,15 @@
 body {
   margin: 0;
-  color: #fff;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
 }
+
 
 #root{
   display: flex;
   height: 100vh;
   width: 100vw;
-  background-color: #262626;
+  background-color: var(--background-950);
+  color: var(--text-50);
 }
 
 #app {
@@ -30,20 +31,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 85%;
   height: 100%;
   max-height: 100%;
-  max-width: 80%;
+  max-width: 85%;
 }
 
-/* Contains the Nav div*/
 #side-block {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  width: 20%;
-  max-width: 20%;
+  width: 15%;
+  max-width: 15%;
   height: 100%;
   max-height: 100%;
 }
@@ -52,21 +52,19 @@ body {
 
 #nav-block {
   height: 85%;
-  width: 40%;
-  background-color: rgba(255, 255, 255, 0.03);
+  width: 60%;
+  max-width: 60%;
+  background-color: var(--panel-bg);
   border-radius: 10px;
   padding: 1.5rem;
-  
 
 }
 
 #nav-inner{
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
   height: 100%
 }
 
@@ -77,35 +75,31 @@ body {
   justify-content: start;
   gap: 1rem;
 
-  min-width: fit-content;
+  max-width: 100%;
   width: 100%;
 }
-
 
 
 .block {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-
-  
 }
-
 
 
 .nav-btn {
   width: 100%;
-  background: #54aba8;
+  max-width: 100%;
   font-family: inherit;
   padding: 0.6em 1.3em;
   font-weight: 900;
-  font-size: 18px;
+  font-size: 1rem;
   border: 3px solid black;
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
   cursor: pointer;
 }
+
 
 .nav-btn:hover {
   transform: translate(-0.05em, -0.05em);
@@ -119,10 +113,12 @@ body {
 
 #nav-footer {
   height: 20%;
+  max-height: 20%;
 }
 
 .contact-row {
   height: 50%;
+  max-height: 50%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -132,8 +128,8 @@ body {
 .contact-btn {
   width: 40%;
   max-width: 40%;
-  background: #54aba8;
-
+  max-height: 100%;
+  overflow: hidden;
   border: 3px solid black;
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
@@ -141,6 +137,7 @@ body {
   display: flex;
   align-self: center;
 }
+
 
 .contact-btn:hover {
   transform: translate(-0.05em, -0.05em);
@@ -150,4 +147,67 @@ body {
 .contact-btn:active {
   transform: translate(0.05em, 0.05em);
   box-shadow: 0.05em 0.05em;
+}
+
+.contact-btn.selected {
+  background-color: white;
+}
+
+.theme-btn {
+  max-height: 72%;
+  height: 72%;
+  max-width: 35%;
+  width: 35%;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em black;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.theme-switch {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.theme-switch .checkbox {
+  opacity: 0;
+}
+
+.theme-switch .checkbox:checked ~ .moon {
+  transform: rotate(180deg);
+  opacity: 0;
+}
+
+.theme-switch .checkbox:checked ~ .sun {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.theme-switch .moon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: .4em;
+  transition: .5s;
+}
+
+.theme-switch .sun {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding: .4em;
+  transition: .5s;
+  opacity: 0;
+}
+
+@media (max-width: 1600px) {
+  .nav-btn{
+    font-size: 1cqi;
+  }
 }

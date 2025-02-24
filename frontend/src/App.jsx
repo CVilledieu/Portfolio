@@ -1,8 +1,12 @@
 import './App.css';
+import './views/util/colors.css';
 import React, {setState, useState, useContext, createContext, useEffect} from 'react';
 import DefaultPage from './views/overview/default.jsx';
 import CommentsPage from './views/comments/comments.jsx';
-import { GithubSVG, LinkedInSVG, ResumeSVG } from './views/util/svgs.jsx';
+import ProjectsPage from './views/projects/projects.jsx';
+import AboutPage from './views/about/about.jsx';
+import HabitsPage from './views/habits/habits.jsx';
+import { GithubSVG, LinkedInSVG, ResumeSVG, SunSVG, MoonSVG } from './views/util/svgs.jsx';
 
 
 /*
@@ -21,11 +25,16 @@ const DisplayCtx = createContext({
   setContent: () => {}
 });
 
+const ThemeCtx = createContext({
+  theme: 'light',
+  setTheme: () => {}
+});
+
 const App = () => {
   useEffect(() => {
     const storedPage = localStorage.getItem('page');
     if (storedPage) {
-      setContent(storedPage);
+      setContent(updatePage(storedPage));
     }
   }, []);
   const [content, setContent] = useState(<DefaultPage />);
@@ -52,27 +61,65 @@ const Nav = () => {
   return (
     <div id="nav-inner">
       <div id="stage-select">
-        <button className="nav-btn" onClick={() => setContent(<DefaultPage />)}>Overview</button>
-        <button className="nav-btn" onClick={() => setContent(<CommentsPage />)}>Comments</button>
-        <button className="nav-btn">Projects</button>
-        <button className="nav-btn">About Me</button>
+        <button className="nav-btn prime1" id="overview-nav-btn" onClick={() => setContent(updatePage('overview'))}>Overview</button>
+        <button className="nav-btn prime1" id="comments-nav-btn" onClick={() => setContent(updatePage('comments'))}>Comments</button>
+        <button className="nav-btn prime1" id="projects-nav-btn" onClick={() => setContent(updatePage('projects'))}>Projects</button>
+        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setContent(updatePage('about'))}>About Me</button>
+        <button className="nav-btn prime1" id="habits-nav-btn" onClick={() => setContent(updatePage('habits'))}>Code Habits</button>
         
       </div>
       <div id="nav-footer">
         <div className="contact-row">
-          <button className="contact-btn"><GithubSVG /></button>
-          <button className="contact-btn"><LinkedInSVG /></button>
+          <button className="contact-btn prime1" id='git' onClick={() => {window.open("https://github.com/CVilledieu")}} ><GithubSVG /></button>
+          <button className="contact-btn prime1"><LinkedInSVG /></button>
         </div>
         <div className="contact-row">
-          <button className="contact-btn">Email</button>
-          <button className="contact-btn"><ResumeSVG /></button>
+          <div className="theme-btn prime1"><ThemeBtn /></div>
+          <button className="contact-btn prime1"><ResumeSVG /></button>
          </div> 
       </div>
     </div>
   );
 }
 
+function ThemeBtn(){
+return (
+  <label className='theme-switch'>
+    <input type='checkbox' className='checkbox' />
+    <MoonSVG />
+    <SunSVG />
+  </label>
+);
+}
 
+function updatePage(page) {
+  localStorage.setItem('page', page);
+  updateBtns(page);
+  switch (page) {
+    case 'overview':
+      return <DefaultPage />;
+    case 'comments':
+      return <CommentsPage />;
+    case 'projects':
+      return <ProjectsPage />;
+    case 'about':
+      return <AboutPage />;
+    case 'habits':
+      return <HabitsPage />;
+    default:
+      return <DefaultPage />;
+  }
+}
+
+function updateBtns(page) {
+  const btns = document.getElementsByClassName('nav-btn');
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].classList.remove('selected');
+    if (btns[i].id === `${page}-nav-btn`) {
+      btns[i].classList.add('selected');
+    }
+  }
+}
 
 
 export default App;
