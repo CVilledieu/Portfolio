@@ -31,10 +31,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 85%;
+  width: 90%;
   height: 100%;
   max-height: 100%;
-  max-width: 85%;
+  max-width: 90%;
 }
 
 #side-block {
@@ -42,8 +42,8 @@ body {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  width: 15%;
-  max-width: 15%;
+  width: 10%;
+  max-width: 10%;
   height: 100%;
   max-height: 100%;
 }
@@ -52,12 +52,11 @@ body {
 
 #nav-block {
   height: 85%;
-  width: 60%;
-  max-width: 60%;
+  width: 90%;
+  max-width: 90%;
   background-color: var(--panel-bg);
   border-radius: 10px;
-  padding: 1.5rem;
-
+  padding: 1cqw .75cqh;
 }
 
 #nav-inner{
@@ -65,27 +64,17 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100%
+  height: 100%;
+  max-width: 90%;
+  width: 90%;
 }
 
 #stage-select {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: start;
   gap: 1rem;
-
-  max-width: 100%;
-  width: 100%;
 }
-
-
-.block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 
 .nav-btn {
   width: 100%;
@@ -100,7 +89,6 @@ body {
   cursor: pointer;
 }
 
-
 .nav-btn:hover {
   transform: translate(-0.05em, -0.05em);
   box-shadow: 0.15em 0.15em;
@@ -111,66 +99,59 @@ body {
   box-shadow: 0.05em 0.05em;
 }
 
+
+
+
 #nav-footer {
   height: 20%;
   max-height: 20%;
+  max-width: 100%;
 }
 
 .contact-row {
   height: 50%;
   max-height: 50%;
+  max-width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
-
-.contact-btn {
-  width: 40%;
-  max-width: 40%;
-  max-height: 100%;
-  overflow: hidden;
+.footer-btn {
+  --foot-btn-width: 3cqw;
+  --foot-btn-height: 6cqh;
+  width: var(--foot-btn-width);
+  height: var(--foot-btn-height);
+  max-width: var(--foot-btn-width);
+  max-height: var(--foot-btn-height);
   border: 3px solid black;
   border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
   cursor: pointer;
+  box-shadow: 0.1em 0.1em black;
   display: flex;
   align-self: center;
+  overflow: hidden;
 }
 
 
 .contact-btn:hover {
   transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em;
+  box-shadow: 0.15em 0.15em black;
 }
 
 .contact-btn:active {
   transform: translate(0.05em, 0.05em);
-  box-shadow: 0.05em 0.05em;
+  box-shadow: 0.05em 0.05em black;
 }
 
 .contact-btn.selected {
   background-color: white;
 }
 
-.theme-btn {
-  max-height: 72%;
-  height: 72%;
-  max-width: 35%;
-  width: 35%;
-  border: 3px solid black;
-  border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em black;
-  cursor: pointer;
-  display: flex;
-  align-self: center;
-  justify-content: center;
-}
-
 .theme-switch {
   position: relative;
-  width: 100%;
-  max-width: 100%;
+  box-sizing: border-box;
+
 }
 
 .theme-switch .checkbox {
@@ -183,7 +164,7 @@ body {
 }
 
 .theme-switch .checkbox:checked ~ .sun {
-  transform: rotate(180deg);
+  transform: translateY(-.3cqh) rotate(180deg);
   opacity: 1;
 }
 

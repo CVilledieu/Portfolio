@@ -70,21 +70,28 @@ const Nav = () => {
       </div>
       <div id="nav-footer">
         <div className="contact-row">
-          <button className="contact-btn prime1" id='git' onClick={() => {window.open("https://github.com/CVilledieu")}} ><GithubSVG /></button>
-          <button className="contact-btn prime1"><LinkedInSVG /></button>
+          <FooterBtn icon={<GithubSVG />} link="https://github.com/CVilledieu" />
+          <FooterBtn icon={<LinkedInSVG />} link="https://www.linkedin.com/in/cvilledieu/" />
         </div>
         <div className="contact-row">
-          <div className="theme-btn prime1"><ThemeBtn /></div>
-          <button className="contact-btn prime1"><ResumeSVG /></button>
+          <ThemeBtn />
+          <FooterBtn icon={<ResumeSVG />} link="" />
          </div> 
       </div>
     </div>
   );
 }
 
+function FooterBtn({icon, link}) {
+  return (
+    <button className="contact-btn prime1 footer-btn" onClick={() => {window.open(link)}}>{icon}</button>
+  );
+}
+
+
 function ThemeBtn(){
 return (
-  <label className='theme-switch'>
+  <label className='contact-btn theme-switch prime1 footer-btn'>
     <input type='checkbox' className='checkbox' />
     <MoonSVG />
     <SunSVG />
