@@ -18,52 +18,46 @@ TODO:
 
 */
 
-// Context for managing the display of the main content
-const DisplayCtx = createContext({
-  content:<HomePage />,
-  setContent: () => {}
-});
 
-const ThemeCtx = createContext({
-  theme: 'light',
-  setTheme: () => {}
-});
+const pageState = {
+    page: <HomePage />,
+    setPage: () => {},
+    theme: 'dark',
+    setTheme: () => {},
+};
 
 const App = () => {
+  const [pageContent, setPageContent] = useState(pageState.page);
+  const [theme, setTheme] = useState(pageState.theme);
   useEffect(() => {
     const storedPage = localStorage.getItem('page');
-    if (storedPage) {
-      setContent(updatePage(storedPage));
-    }
+    setPageContent(updatePage(storedPage));
   }, []);
-  const [content, setContent] = useState(DisplayCtx.content);
-  const value = {content, setContent};
+    
+
   return (
     <div id='app'>
-      <DisplayCtx.Provider value={value}>
       <div id="side-block">
           <div id="nav-block">
-            <Nav />
+            <Nav setFunc={setPageContent} setTheme={setTheme} />
           </div>
       </div>
       <div id="main-block">
-          {content}
+          {pageContent}
       </div>
-      </DisplayCtx.Provider>
     </div>
   );
 };
 
 
-const Nav = () => {
-  const {content, setContent} = useContext(DisplayCtx);
+const Nav = ({setFunc, setTheme}) => {
   return (
     <div id="nav-inner">
       <div id="stage-select">
-        <button className="nav-btn prime1" id="overview-nav-btn" onClick={() => setContent(updatePage('overview'))}>Home</button>
-        <button className="nav-btn prime1" id="comments-nav-btn" onClick={() => setContent(updatePage('comments'))}>Comments</button>
-        <button className="nav-btn prime1" id="projects-nav-btn" onClick={() => setContent(updatePage('projects'))}>Projects</button>
-        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setContent(updatePage('about'))}>About</button>
+        <button className="nav-btn prime1 selected" id="overview-nav-btn" onClick={() => setFunc(updatePage('overview'))}>Home</button>
+        <button className="nav-btn prime1" id="comments-nav-btn" onClick={() => setFunc(updatePage('comments'))}>Comments</button>
+        <button className="nav-btn prime1" id="projects-nav-btn" onClick={() => setFunc(updatePage('projects'))}>Projects</button>
+        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setFunc(updatePage('about'))}>About</button>
         
       </div>
       <div id="nav-footer">
@@ -72,7 +66,7 @@ const Nav = () => {
           <FooterBtn icon={<LinkedInSVG />} link="https://www.linkedin.com/in/cvilledieu/" />
         </div>
         <div className="contact-row">
-          <ThemeBtn />
+          <ThemeBtn set={setTheme} />
           <FooterBtn icon={<ResumeSVG />} link="" />
          </div> 
       </div>

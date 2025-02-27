@@ -2,7 +2,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2cqw;
-    box-sizing: border-box;
 }
 
 .home-block {
@@ -11,9 +10,10 @@
     align-items: center;
     justify-content: center;
     background-color: var(--panel-bg);
-    border-radius: 10px;
+    border-radius: 1px;
     box-sizing: border-box;
     padding: 2cqh 1cqw;
+    box-shadow: .2cqh .2cqh .5cqh black;
 }
 
 .large {

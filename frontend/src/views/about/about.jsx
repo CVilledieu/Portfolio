@@ -1,23 +1,23 @@
- import './about.css';
- import profilepic from '../static/best2.jpg';
- 
+import './about.css';
+import profilepic from '../static/best2.jpg';
+
 export default function AboutPage() {
     return (
         <div id="about-page">
             <title>Just Me</title>
-            <div id= "about-filler-top">
-                 <div id="about-filler-left">
+            <div id="about-filler-top">
+                <div id="about-filler-left">
                     <div id="about-image">
                         <img src={profilepic} id="profile-pic" alt="Profile Pic" />
                     </div>
-                 </div>
+                </div>
                 <div id="about-filler-right">
-                        
-                        
+
+
                 </div>
             </div>
-           
-            
+
+
             <div id="about-content">
                 <div id="about-title">
                     <h1>About Me</h1>

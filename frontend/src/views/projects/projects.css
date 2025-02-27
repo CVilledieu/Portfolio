@@ -1,0 +1,14 @@
+#projects {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#projects-display {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: var(--panel-bg);
+
+}
+

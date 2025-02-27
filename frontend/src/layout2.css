@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+    font-family: Consolas;
   }
   
   
@@ -17,6 +17,7 @@ body {
     width: 100%;
     max-width: 100%;
     padding: 2cqh 2cqw;
+    box-sizing: border-box;
   }
   
   #app {
@@ -50,7 +51,7 @@ body {
   
   
   #nav-block {
-    background-color: var(--panel-bg);
+   
     border-radius: 10px;
     display: flex;
     width: 100%;
@@ -78,7 +79,7 @@ body {
   }
   
   .nav-btn {
-    height: ;
+
     width: 100%;
     max-width: 100%;
     font-family: inherit;
