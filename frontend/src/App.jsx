@@ -1,11 +1,10 @@
-import './App.css';
+import './layout2.css';
 import './views/util/colors.css';
 import React, {setState, useState, useContext, createContext, useEffect} from 'react';
-import DefaultPage from './views/overview/default.jsx';
+import HomePage from './views/overview/home.jsx';
 import CommentsPage from './views/comments/comments.jsx';
 import ProjectsPage from './views/projects/projects.jsx';
 import AboutPage from './views/about/about.jsx';
-import HabitsPage from './views/habits/habits.jsx';
 import { GithubSVG, LinkedInSVG, ResumeSVG, SunSVG, MoonSVG } from './views/util/svgs.jsx';
 
 
@@ -21,7 +20,7 @@ TODO:
 
 // Context for managing the display of the main content
 const DisplayCtx = createContext({
-  content:<DefaultPage />,
+  content:<HomePage />,
   setContent: () => {}
 });
 
@@ -37,7 +36,7 @@ const App = () => {
       setContent(updatePage(storedPage));
     }
   }, []);
-  const [content, setContent] = useState(<DefaultPage />);
+  const [content, setContent] = useState(DisplayCtx.content);
   const value = {content, setContent};
   return (
     <div id='app'>
@@ -61,11 +60,10 @@ const Nav = () => {
   return (
     <div id="nav-inner">
       <div id="stage-select">
-        <button className="nav-btn prime1" id="overview-nav-btn" onClick={() => setContent(updatePage('overview'))}>Overview</button>
+        <button className="nav-btn prime1" id="overview-nav-btn" onClick={() => setContent(updatePage('overview'))}>Home</button>
         <button className="nav-btn prime1" id="comments-nav-btn" onClick={() => setContent(updatePage('comments'))}>Comments</button>
         <button className="nav-btn prime1" id="projects-nav-btn" onClick={() => setContent(updatePage('projects'))}>Projects</button>
-        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setContent(updatePage('about'))}>About Me</button>
-        <button className="nav-btn prime1" id="habits-nav-btn" onClick={() => setContent(updatePage('habits'))}>Code Habits</button>
+        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setContent(updatePage('about'))}>About</button>
         
       </div>
       <div id="nav-footer">
@@ -104,17 +102,15 @@ function updatePage(page) {
   updateBtns(page);
   switch (page) {
     case 'overview':
-      return <DefaultPage />;
+      return <HomePage />;
     case 'comments':
       return <CommentsPage />;
     case 'projects':
       return <ProjectsPage />;
     case 'about':
       return <AboutPage />;
-    case 'habits':
-      return <HabitsPage />;
     default:
-      return <DefaultPage />;
+      return <HomePage />;
   }
 }
 

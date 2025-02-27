@@ -1,6 +1,7 @@
 export default function ProjectsPage() {
     return (
         <div id="sampler-page">
+            <title>What you came to see</title>
             <div id="sampler-title">
                 <h1>Projects</h1>
             </div>

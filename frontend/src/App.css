@@ -12,6 +12,13 @@ body {
   color: var(--text-50);
 }
 
+.page {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  padding: 2cqh 2cqw;
+}
+
 #app {
   align-self: center;
   display: flex;

@@ -4,6 +4,7 @@
 export default function AboutPage() {
     return (
         <div id="about-page">
+            <title>Just Me</title>
             <div id= "about-filler-top">
                  <div id="about-filler-left">
                     <div id="about-image">

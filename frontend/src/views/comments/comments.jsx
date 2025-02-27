@@ -1,5 +1,5 @@
 import './comments.css';
-import {Comments} from './data.js';
+import {CommentData} from './data.js';
 import React, {createContext, useContext, useState} from 'react';
 
 const CardCtx = createContext({
@@ -8,7 +8,7 @@ const CardCtx = createContext({
 });
 
 export default function CommentsPage() {
-    const cList = Comments.map(com => {
+    const cList = CommentData.map(com => {
         return(
         <div className='comment-stack-title targetable' key={com.id} onClick={() => updateCtx(com)} >
             {com.Title}
@@ -17,6 +17,7 @@ export default function CommentsPage() {
     });
     return (
         <div id="comments-page">
+            <title>I'm Just Saying</title>
             <div id="comment-stack">
                 <div id='comment-stack-list'>
                     {cList}

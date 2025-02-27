@@ -1,4 +1,4 @@
-export const Comments = [{
+export const CommentData = [{
     id: 0,
     Title: "AI needs a lot more time",
     Summary: "The truth is both the doomers and praisers need to spend some time with it.",
