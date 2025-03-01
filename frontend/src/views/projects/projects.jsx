@@ -15,7 +15,7 @@ export default function ProjectsPage() {
         <div className='page' id="projects">
             <div className='project-btn' id='left-btn' >&lt;</div>
             <div id="projects-display">
-                {LanguageMap}
+                {LanguageMap()}
             </div>
             <div className='project-btn' id='right-btn'>&gt;</div>
         </div>
