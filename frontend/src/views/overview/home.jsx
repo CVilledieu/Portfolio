@@ -1,7 +1,8 @@
-import './style.css';
+import './home.css';
 import {CommentData} from '../comments/data.js';
 import {Golang, Rust, JS} from '../util/svgs.jsx';
-
+import ProjectsJsonData from '../projects/data.json';
+import React, {useState} from 'react';
 
 
 export default function HomePage() {
@@ -115,15 +116,57 @@ function StarRating({count}) {
 
 
 function Projects() {
+    const projectData = ProjectsJsonData;
+    const [projectState, setProjectState] = useState(0);
+    const projectCatagory = projectData[projectState];
+
     const inner = (
         <div className='inner-div-home' id="home-projects">
-            <div className='home-projects-single'>
-                <div className='project-svg'>Single Project</div>
-                <div className='project-title'>Details about that Project</div>
+            <div className='home-projects-catagory'>
+                {projectCatagory.catagory}
+            </div>
+            <div className='home-projects-display'>
+                <div className='home-projects-nav'>
+                    <ProjectNavBtn direction='left' onClick={() => setProjectState(projectState - 1)} />
+                </div>
+                <DisplayedProjects projects={projectCatagory.projects} />
+                <div className='home-projects-nav'>
+                    <ProjectNavBtn direction='right' onClick={() => setProjectState(projectState + 1)} />
+                </div>
             </div>
         </div>
     );
     return (
         <Block title="Projects" size='large' InnerDiv={inner}/>
+    );
+}
+
+function ProjectNavBtn({direction, onClick}) {
+    return (
+        <label className='home-projects-nav-btn' id={`projects-${direction}-nav`} onClick={onClick}>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+    );
+}
+
+function DisplayedProjects({projects}) {
+    return (
+        <div className='home-projects-list'>
+            {projects.map(project => {
+                return <ProjectSingle key={project.id} title={project.title} description={project.description} link={project.link} />
+            })}
+        </div>
+    );
+}
+
+function ProjectSingle({title, description, link}) {
+    return (
+        <div className='home-project'>
+            <div className='home-project-title'>{title}</div>
+            <div className='home-project-description'>{description}</div>
+            <div className='home-project-link'><a href={link} target='_blank' rel='noreferrer'>click here</a></div>
+        </div>
     );
 }

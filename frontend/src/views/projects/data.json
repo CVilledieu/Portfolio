@@ -1,33 +1,33 @@
 [
     {
         "id": 1,
-        "lanaguage": "JavaScript",
+        "catagory": "JavaScript",
         "projects": [
             {
                 "id": 1,
-                "name": "Project 1",
+                "title": "Project 1",
                 "description": "Description 1",
                 "link": ""
             }
         ]
     },{
         "id": 2,
-        "lanaguage": "Go",
+        "catagory": "Go",
         "projects": [
             {
                 "id": 1,
-                "name": "Project 1",
+                "title": "Project 12",
                 "description": "Description 1",
                 "link": ""
             }
         ]
     },{
         "id": 3,
-        "lanaguage": "Rust",
+        "catagory": "Rust",
         "projects": [
             {
                 "id": 1,
-                "name": "Project 1",
+                "title": "Project 13",
                 "description": "Description 1",
                 "link": ""
             }

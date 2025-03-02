@@ -4,20 +4,19 @@ import React from 'react';
 
 
 
+
 export default function ProjectsPage() {
     const data = ProjectData;
     const LanguageMap = () => {
-        lang = data[0];
-        return (
-            <LanguageDiv key={lang.id} title={lang.language} projectArray={lang.projects} />
-        )};
+        return data.map(lang => {
+            return (
+                <LanguageDiv key={lang.id} title={lang.catagory} projectArray={lang.projects} />
+        )}
+    )};
     return (
         <div className='page' id="projects">
-            <div className='project-btn' id='left-btn' >&lt;</div>
-            <div id="projects-display">
-                {LanguageMap()}
-            </div>
-            <div className='project-btn' id='right-btn'>&gt;</div>
+
+            {LanguageMap()}
         </div>
     );
 }
@@ -51,7 +50,7 @@ function Project({title, description, link}) {
                 {description}
             </div>
             <div className="project-link">
-                <a href={link} target="_blank" rel="noreferrer">{link}</a>
+                <a href={link} target="_blank" rel="noreferrer">click here{link}</a>
             </div>
         </div>
     );

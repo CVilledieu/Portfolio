@@ -6,6 +6,7 @@ import CommentsPage from './views/comments/comments.jsx';
 import ProjectsPage from './views/projects/projects.jsx';
 import AboutPage from './views/about/about.jsx';
 import { GithubSVG, LinkedInSVG, ResumeSVG, SunSVG, MoonSVG } from './views/util/svgs.jsx';
+import resume from './views/static/best2.jpg';
 
 
 /*
@@ -67,7 +68,7 @@ const Nav = ({setFunc, setTheme}) => {
         </div>
         <div className="contact-row">
           <ThemeBtn set={setTheme} />
-          <FooterBtn icon={<ResumeSVG />} link="" />
+          <FooterBtn icon={<ResumeSVG />} link={resume} />
          </div> 
       </div>
     </div>

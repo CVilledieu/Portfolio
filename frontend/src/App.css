@@ -48,7 +48,7 @@ body {
 #side-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+
   justify-content: center;
   width: 10%;
   max-width: 10%;
@@ -60,9 +60,10 @@ body {
 
 
 #nav-block {
+
   height: 85%;
-  width: 90%;
-  max-width: 90%;
+  width: 80%;
+  max-width: 80%;
   background-color: var(--panel-bg);
   border-radius: 1px;
   padding: 1cqw .75cqh;
@@ -87,12 +88,17 @@ body {
 }
 
 .nav-btn {
-  width: 100%;
-  max-width: 100%;
+  --nav-btn-width: 6cqw;
+  --nav-btn-height: 4.5cqh;
+  width: var(--nav-btn-width);
+  height: var(--nav-btn-height);
+  max-height: var(--nav-btn-height);
+  max-width: var(--nav-btn-width);
+
   font-family: inherit;
   padding: 0.6em 1.3em;
   font-weight: 900;
-  font-size: 1rem;
+  font-size: 1.5cqh;
   border: 3px solid black;
   border-radius: 0.4em;
   box-shadow: 0.1em 0.1em;
@@ -128,8 +134,8 @@ body {
 }
 
 .footer-btn {
-  --foot-btn-width: 3cqw;
-  --foot-btn-height: 6cqh;
+  --foot-btn-width: 2.5cqw;
+  --foot-btn-height: 5cqh;
   width: var(--foot-btn-width);
   height: var(--foot-btn-height);
   max-width: var(--foot-btn-width);
