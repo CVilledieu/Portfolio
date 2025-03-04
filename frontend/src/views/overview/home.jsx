@@ -118,21 +118,16 @@ function StarRating({count}) {
 function Projects() {
     const projectData = ProjectsJsonData;
     const [projectState, setProjectState] = useState(0);
-    const projectCatagory = projectData[projectState];
+    const projectCategory = projectData[projectState];
 
     const inner = (
         <div className='inner-div-home' id="home-projects">
-            <div className='home-projects-catagory'>
-                {projectCatagory.catagory}
+            <div className='home-projects-nav'>
+                <ProjectNavBtn direction='left' onClick={() => setProjectState(projectState - 1)} />
             </div>
-            <div className='home-projects-display'>
-                <div className='home-projects-nav'>
-                    <ProjectNavBtn direction='left' onClick={() => setProjectState(projectState - 1)} />
-                </div>
-                <DisplayedProjects projects={projectCatagory.projects} />
-                <div className='home-projects-nav'>
-                    <ProjectNavBtn direction='right' onClick={() => setProjectState(projectState + 1)} />
-                </div>
+            <DisplayProjects library={projectCategory} />
+            <div className='home-projects-nav'>
+                <ProjectNavBtn direction='right' onClick={() => setProjectState(projectState + 1)} />
             </div>
         </div>
     );
@@ -143,7 +138,7 @@ function Projects() {
 
 function ProjectNavBtn({direction, onClick}) {
     return (
-        <label className='home-projects-nav-btn' id={`projects-${direction}-nav`} onClick={onClick}>
+        <label className='home-projects-nav-btn' id={`projects-nav-${direction}`} onClick={onClick}>
             <span></span>
             <span></span>
             <span></span>
@@ -151,19 +146,23 @@ function ProjectNavBtn({direction, onClick}) {
     );
 }
 
-function DisplayedProjects({projects}) {
+function DisplayProjects({library}) {
+    const projectsList = library.list;
     return (
-        <div className='home-projects-list'>
-            {projects.map(project => {
+        <div className='home-projects-display'>
+            <div className='home-projects-category'>{library.catagory}</div>
+            <div className='home-projects-list'>
+            {projectsList.map(project => {
                 return <ProjectSingle key={project.id} title={project.title} description={project.description} link={project.link} />
             })}
+            </div>
         </div>
     );
 }
 
 function ProjectSingle({title, description, link}) {
     return (
-        <div className='home-project'>
+        <div className='home-projects-single'>
             <div className='home-project-title'>{title}</div>
             <div className='home-project-description'>{description}</div>
             <div className='home-project-link'><a href={link} target='_blank' rel='noreferrer'>click here</a></div>

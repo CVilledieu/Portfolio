@@ -8,9 +8,9 @@ import React from 'react';
 export default function ProjectsPage() {
     const data = ProjectData;
     const LanguageMap = () => {
-        return data.map(lang => {
+        return data.map(category => {
             return (
-                <LanguageDiv key={lang.id} title={lang.catagory} projectArray={lang.projects} />
+                <LanguageDiv key={category.id} title={category.category} projectArray={category.list} />
         )}
     )};
     return (
@@ -22,14 +22,14 @@ export default function ProjectsPage() {
 }
 
 
-function LanguageDiv({title, projectArray}) {
+function LanguageDiv({title, projectsList}) {
     return (
         <div className="language">
             <div className="language-name">
                 {title}
             </div>
             <div className="language-projects">
-                {projectArray.map(project => {
+                {projectsList.map(project => {
                     return (
                         <Project key={project.id} title={project.title} description={project.description} link={project.link} />
                     );

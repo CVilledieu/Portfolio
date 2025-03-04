@@ -1,6 +1,6 @@
 import './App.css';
 import './views/util/colors.css';
-import React, {setState, useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 import HomePage from './views/overview/home.jsx';
 import CommentsPage from './views/comments/comments.jsx';
 import ProjectsPage from './views/projects/projects.jsx';

@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "catagory": "JavaScript",
-        "projects": [
+        "category": "JavaScript",
+        "list": [
             {
                 "id": 1,
                 "title": "Project 1",
@@ -12,8 +12,8 @@
         ]
     },{
         "id": 2,
-        "catagory": "Go",
-        "projects": [
+        "category": "Go",
+        "list": [
             {
                 "id": 1,
                 "title": "Project 12",
@@ -23,8 +23,8 @@
         ]
     },{
         "id": 3,
-        "catagory": "Rust",
-        "projects": [
+        "category": "Rust",
+        "list": [
             {
                 "id": 1,
                 "title": "Project 13",
