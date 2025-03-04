@@ -8,9 +8,9 @@ import React from 'react';
 export default function ProjectsPage() {
     const data = ProjectData;
     const LanguageMap = () => {
-        return data.map(category => {
+        return data.map(library => {
             return (
-                <LanguageDiv key={category.id} title={category.category} projectArray={category.list} />
+                <LanguageDiv key={library.id} title={library.category} projectsList={library.list} />
         )}
     )};
     return (

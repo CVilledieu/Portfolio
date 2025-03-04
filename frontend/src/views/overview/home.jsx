@@ -67,8 +67,6 @@ function ContactInfo() {
 }
 
 
-
-
 function Languages() {
     const NewLang = (Svg, count) => {
         return (
