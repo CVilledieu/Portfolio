@@ -86,7 +86,7 @@ function Languages() {
         </div>
     );
     return (
-        <Block title="Languages" InnerDiv={inner}/>
+        <Block title="Experience" InnerDiv={inner}/>
     );
 }
 
