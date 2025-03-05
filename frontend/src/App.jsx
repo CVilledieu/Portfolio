@@ -23,7 +23,7 @@ TODO:
 const pageState = {
     page: <HomePage />,
     setPage: () => {},
-    theme: 'dark',
+    theme: 'darkTheme',
     setTheme: () => {},
 };
 
@@ -59,6 +59,9 @@ const Nav = ({setFunc, setTheme}) => {
         <button className="nav-btn prime1" id="comments-nav-btn" onClick={() => setFunc(updatePage('comments'))}>Comments</button>
         <button className="nav-btn prime1" id="projects-nav-btn" onClick={() => setFunc(updatePage('projects'))}>Projects</button>
         <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setFunc(updatePage('about'))}>About</button>
+        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setFunc(updatePage('about'))}>Github</button>
+        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setFunc(updatePage('about'))}>LinkedIn</button>
+        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setFunc(updatePage('about'))}>LeetCode</button>
         
       </div>
       <div id="nav-footer">
