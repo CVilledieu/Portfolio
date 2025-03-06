@@ -90,11 +90,14 @@
     max-height: 100%;
 }
 
+.home-projects-nav-btn#disabled {
+    visibility: hidden;
+}
+
 #home-projects {
     width: 100%;
     max-width: 100%;
-    align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     gap: .5cqw;
 }
@@ -102,68 +105,6 @@
 .home-projects-nav {
     display: flex;
     align-items: center;
-    max-width: 10%;
-    width: 10%;
-}
-
-
-
-.home-projects-nav-btn {
-    position: relative;
-    width: 40px;
-    height: 30px;
-    background: transparent;
-    cursor: pointer;
-    display: block;
-}
-
-.home-projects-nav-btn span {
-    display: block;
-    position: absolute;
-    height: 4px;
-    width: 100%;
-    background: var(--secondary);
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-}
-
-.home-projects-nav-btn input {
-    display: none;
-}
-
-.home-projects-nav-btn span:nth-of-type(1) {
-    top: 0px;
-    transform-origin: left center;
-}
-
-.home-projects-nav-btn span:nth-of-type(2) {
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: left center;
-}
-
-.home-projects-nav-btn span:nth-of-type(3) {
-    top: 100%;
-    transform-origin: left center;
-    transform: translateY(-100%);
-}
-
-.home-projects-nav-btn input:checked ~ span:nth-of-type(1) {
-    transform: rotate(45deg);
-    top: 0px;
-    left: 5px;
-}
-
-.home-projects-nav-btn input:checked ~ span:nth-of-type(2) {
-    width: 0%;
-    opacity: 0;
-}
-
-.home-projects-nav-btn input:checked ~ span:nth-of-type(3) {
-    transform: rotate(-45deg);
-    top: 28px;
-    left: 5px;
+    width: 1.5cqi;
+    max-width: 1.5cqi;
 }

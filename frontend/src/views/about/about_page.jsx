@@ -1,4 +1,4 @@
-import './about.css';
+import './about_style.css';
 import profilepic from '../static/best2.jpg';
 
 export default function AboutPage() {

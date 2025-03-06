@@ -1,10 +1,10 @@
 import './App.css';
 import './views/util/colors.css';
 import React, { useState, useEffect} from 'react';
-import HomePage from './views/overview/home.jsx';
-import CommentsPage from './views/comments/comments.jsx';
-import ProjectsPage from './views/projects/projects.jsx';
-import AboutPage from './views/about/about.jsx';
+import HomePage from './views/home/home_page.jsx';
+import CommentsPage from './views/comments/comments_page.jsx';
+import ProjectsPage from './views/projects/projects_page.jsx';
+import AboutPage from './views/about/about_page.jsx';
 import { GithubSVG, LinkedInSVG, ResumeSVG, SunSVG, MoonSVG } from './views/util/svgs.jsx';
 import resume from './views/static/best2.jpg';
 
@@ -22,25 +22,28 @@ TODO:
 
 const pageState = {
     page: <HomePage />,
-    setPage: () => {},
-    theme: 'darkTheme',
-    setTheme: () => {},
+    theme: 'dark',
 };
 
+//App is the main component that holds the navigation and the page content
+//The page content is stored in state and is updated by the navigation buttons
+//The navigation buttons are stored in the Nav component
+//The Nav component is split into three groups: navigation buttons, external links, and utility buttons
+//The prime nav buttons update the page state to display the corresponding page
+//All page content can be found in the views folder
+//Default page is the Home page
 const App = () => {
   const [pageContent, setPageContent] = useState(pageState.page);
-  const [theme, setTheme] = useState(pageState.theme);
   useEffect(() => {
     const storedPage = localStorage.getItem('page');
     setPageContent(updatePage(storedPage));
   }, []);
     
-
   return (
     <div id='app'>
       <div id="side-block">
           <div id="nav-block">
-            <Nav setFunc={setPageContent} setTheme={setTheme} />
+            <Nav setFunc={setPageContent}  />
           </div>
       </div>
       <div id="main-block">
@@ -51,55 +54,106 @@ const App = () => {
 };
 
 
-const Nav = ({setFunc, setTheme}) => {
+//Nav contains the navigation buttons, external links, and utility buttons
+//The navigation buttons are the main buttons that change the page content
+//The external links are buttons that link to my other profiles
+//The utility buttons are the resume link and the theme switch button
+const Nav = ({setFunc}) => {
   return (
     <div id="nav-inner">
-      <div id="stage-select">
-        <button className="nav-btn prime1 selected" id="overview-nav-btn" onClick={() => setFunc(updatePage('overview'))}>Home</button>
-        <button className="nav-btn prime1" id="comments-nav-btn" onClick={() => setFunc(updatePage('comments'))}>Comments</button>
-        <button className="nav-btn prime1" id="projects-nav-btn" onClick={() => setFunc(updatePage('projects'))}>Projects</button>
-        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setFunc(updatePage('about'))}>About</button>
-        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setFunc(updatePage('about'))}>Github</button>
-        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setFunc(updatePage('about'))}>LinkedIn</button>
-        <button className="nav-btn prime1" id="about-nav-btn" onClick={() => setFunc(updatePage('about'))}>LeetCode</button>
-        
-      </div>
-      <div id="nav-footer">
-        <div className="contact-row">
-          <FooterBtn icon={<GithubSVG />} link="https://github.com/CVilledieu" />
-          <FooterBtn icon={<LinkedInSVG />} link="https://www.linkedin.com/in/cvilledieu/" />
-        </div>
-        <div className="contact-row">
-          <ThemeBtn set={setTheme} />
-          <FooterBtn icon={<ResumeSVG />} link={resume} />
-         </div> 
-      </div>
+      <PrimeNav setFunc={setFunc} />
+      <ExternalLinks />
+      <NavFooter />
     </div>
   );
 }
 
-function FooterBtn({icon, link}) {
+//PrimeNav contains the main navigation buttons that update the state of the page
+//ClassNames: 
+// nav-btn is the default button style, 
+// page-select is used to set a style for the currently selected page's button
+//
+function PrimeNav({setFunc}) {
+  const btn = (title, page, selected) => {
+    return (
+      <button 
+        className={"nav-btn page-select all-nav-btns" + " "} 
+        id={page + "-nav-btn"} 
+        onClick={() => {setFunc(updatePage(page))}}
+        >
+
+        {title}
+
+      </button>
+    );
+  }
+
   return (
-    <button className="contact-btn prime1 footer-btn" onClick={() => {window.open(link)}}>{icon}</button>
+    <div className='nav-group' id='prime-nav'>
+      {btn('Home', 'overview')}
+      {btn('Comments', 'comments')}
+      {btn('Projects', 'projects')}
+      {btn('About', 'about')}
+    </div>
+  );
+}
+
+//External links are the buttons that link to my other profiles
+//This group includes any link that will take the user outside of the site
+function ExternalLinks() {
+  const btn = (title, link) => {
+    return (
+      <button className="nav-btn all-nav-btns" onClick={() => {window.open(link)}}>{title}</button>
+    );
+  }
+
+  return (
+    <div className='nav-group' id='outside-links'>
+      {btn('Github', 'https://www.github.com/CVilledieu')}
+      {btn('LinkedIn', 'https://linkedin.com/in/cvilledieu')}
+      {btn('LeetCode', 'https://leetcode.com/u/EatKittens/')}
+    </div>
   );
 }
 
 
-function ThemeBtn(){
-return (
-  <label className='contact-btn theme-switch prime1 footer-btn'>
-    <input type='checkbox' className='checkbox' />
-    <MoonSVG />
-    <SunSVG />
-  </label>
-);
+//Footer buttons are different from the rest of the buttons
+//These are not Nav, but rather a link to my resume and the button to change the theme
+//These buttons are smaller and side by side
+function NavFooter() {
+  const btn = (title, link) => {
+    return (
+      <button className="contact-btn all-nav-btns footer-btn" onClick={() => {window.open(link)}}>{title}</button>
+    );
+  }
+
+  //Theme switch button set up to switch between light and dark mode
+  //Btn cycles through a sun and moon icon to represent the theme
+  const ThemeBtn = () =>{
+    return (
+      <label className='contact-btn theme-switch all-nav-btns  footer-btn'>
+        <input type='checkbox' className='checkbox' />
+        <MoonSVG />
+        <SunSVG />
+      </label>
+    );
+  }
+
+  return (
+    <div className='nav-group' id='nav-footer'>
+      {btn(<ResumeSVG />, resume)}
+      <ThemeBtn />
+    </div>
+  )
 }
+
+
 
 function updatePage(page) {
   localStorage.setItem('page', page);
   updateBtns(page);
   switch (page) {
-    case 'overview':
+    case 'home':
       return <HomePage />;
     case 'comments':
       return <CommentsPage />;
@@ -113,7 +167,7 @@ function updatePage(page) {
 }
 
 function updateBtns(page) {
-  const btns = document.getElementsByClassName('nav-btn');
+  const btns = document.getElementsByClassName('page-select');
   for (let i = 0; i < btns.length; i++) {
     btns[i].classList.remove('selected');
     if (btns[i].id === `${page}-nav-btn`) {

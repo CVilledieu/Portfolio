@@ -1,4 +1,4 @@
-import './projects.css';
+import './projects_style.css';
 import ProjectData from './data.json';
 import React from 'react';
 

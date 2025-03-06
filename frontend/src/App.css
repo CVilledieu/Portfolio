@@ -80,12 +80,41 @@ body {
   width: 90%;
 }
 
-#stage-select {
+.nav-group {
   display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  gap: 1rem;
+
+}
+
+
+#stage-select {
   flex-direction: column;
   justify-content: start;
-  gap: 1rem;
+  
 }
+
+#prime-nav {
+  flex-direction: column;
+  justify-content: start;
+  
+}
+
+#outside-links {
+  flex-direction: column;
+  justify-content: end;
+}
+
+#nav-footer {
+  flex-direction: row;
+  justify-content: center;
+  height: 10%;
+  max-height: 10%;
+  max-width: 100%;
+}
+
 
 .nav-btn {
   --nav-btn-width: 6cqw;
@@ -95,14 +124,12 @@ body {
   max-height: var(--nav-btn-height);
   max-width: var(--nav-btn-width);
 
-  font-family: inherit;
   padding: 0.6em 1.3em;
-  font-weight: 900;
-  font-size: 1.5cqh;
-  border: 3px solid black;
-  border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
-  cursor: pointer;
+}
+
+.page-select.selected {
+  background-color: var(--secondary);
+  color: var(--background-950);
 }
 
 .nav-btn:hover {
@@ -115,23 +142,21 @@ body {
   box-shadow: 0.05em 0.05em;
 }
 
-
-
-
-#nav-footer {
-  height: 20%;
-  max-height: 20%;
-  max-width: 100%;
+.all-nav-btns {
+  cursor: pointer;
+  background-color: var(--primary);
+  color: var(--background-950);
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 1.5cqh;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em black;
 }
 
-.contact-row {
-  height: 50%;
-  max-height: 50%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
+
+
+
 
 .footer-btn {
   --foot-btn-width: 2.5cqw;
@@ -140,10 +165,6 @@ body {
   height: var(--foot-btn-height);
   max-width: var(--foot-btn-width);
   max-height: var(--foot-btn-height);
-  border: 3px solid black;
-  border-radius: 0.4em;
-  cursor: pointer;
-  box-shadow: 0.1em 0.1em black;
   display: flex;
   align-self: center;
   overflow: hidden;
@@ -158,10 +179,6 @@ body {
 .contact-btn:active {
   transform: translate(0.05em, 0.05em);
   box-shadow: 0.05em 0.05em black;
-}
-
-.contact-btn.selected {
-  background-color: white;
 }
 
 .theme-switch {

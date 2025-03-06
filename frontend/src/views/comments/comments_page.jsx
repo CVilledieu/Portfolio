@@ -1,4 +1,4 @@
-import './comments.css';
+import './comments_style.css';
 import {CommentData} from './data.js';
 import React, {useState} from 'react';
 
