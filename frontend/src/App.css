@@ -8,8 +8,8 @@ body {
   display: flex;
   height: 100vh;
   width: 100vw;
-  background-color: var(--background-950);
-  color: var(--text-50);
+  background-color: var(--background2);
+  color: var(--text);
 }
 
 .page {
@@ -129,7 +129,7 @@ body {
 
 .page-select.selected {
   background-color: var(--secondary);
-  color: var(--background-950);
+  color: var(--button-text);
 }
 
 .nav-btn:hover {
@@ -145,7 +145,7 @@ body {
 .all-nav-btns {
   cursor: pointer;
   background-color: var(--primary);
-  color: var(--background-950);
+  color: var(--button-text);
   font-family: inherit;
   font-weight: 900;
   font-size: 1.5cqh;
@@ -218,6 +218,10 @@ body {
   padding: .4em;
   transition: .5s;
   opacity: 0;
+}
+
+.stars{
+  color: var(--accent);
 }
 
 @media (max-width: 1600px) {

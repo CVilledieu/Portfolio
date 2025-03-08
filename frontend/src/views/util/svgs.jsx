@@ -113,4 +113,25 @@ export function JS() {
   </svg>
   )
 }
+
+
+export function RightArrow() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" transform="rotate(180)">
+    <path
+      d="M405.32 234.672H188.347l70.25-70.25-30.167-30.167-121.75 121.75 121.75 121.74 30.167-30.167-70.248-70.24h216.97z"
+      
+    />
+  </svg>
+  )
+}
+export function LeftArrow() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <path
+      d="M405.32 234.672H188.347l70.25-70.25-30.167-30.167-121.75 121.75 121.75 121.74 30.167-30.167-70.248-70.24h216.97z"
+    />
+  </svg>
+  )
+}
 export {GithubSVG, LinkedInSVG, ResumeSVG, MoonSVG, SunSVG};

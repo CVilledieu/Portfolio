@@ -1,6 +1,6 @@
 import './home_style.css';
 import {CommentData} from '../comments/data.js';
-import {Golang, Rust, JS} from '../util/svgs.jsx';
+import {Golang, Rust, JS, RightArrow, LeftArrow} from '../util/svgs.jsx';
 import ProjectsJsonData from '../projects/data.json';
 import React, {useState} from 'react';
 
@@ -106,7 +106,7 @@ function StarRating({count}) {
         return stars;
     }
     return (
-        <div className="stars color-accent">
+        <div className="stars">
             {Stars()}
         </div>
         );
@@ -120,37 +120,35 @@ function Projects() {
 
     const ProjectNavBtn = ({direction, onClick, disableFunc}) => {
         return (
-            <button className='home-projects-nav-btn' id={disableFunc} onClick={onClick}>
-                {direction === 'left' ? '❮': '❯'}
-            </button>
+            <div className='home-projects-nav'>
+                <button className='home-projects-nav-btn' onClick={onClick} disabled={disableFunc}>
+                    {direction === 'left' ? LeftArrow(): RightArrow()}
+                </button>
+            </div>
         );
     }
 
-    const updateIndex = (d) => {
-        setLibIndex(libIndex + d)
-    }
     const inner = (
         <div className='inner-div-home' id="home-projects">
-            <div className='home-projects-nav'>
-                <ProjectNavBtn direction='left' 
-                    disableFunc={libIndex == 0 ? "disabled": ""} 
-                    onClick={() => {
-                        updateIndex(-1);
-                        setLib(projectData[libIndex]);
-                    }} 
-                />
-            </div>
+            
+            <ProjectNavBtn direction='left' 
+                disableFunc={libIndex == 0 ? "disabled": ""} 
+                onClick={() => {
+                    setLib(() => projectData[libIndex - 1]);
+                    setLibIndex(libIndex - 1);
+                }} />
+            
             <DisplayProjects library={lib} />
-            <div className='home-projects-nav'>
-                <ProjectNavBtn direction='right' 
-                    disableFunc={libIndex == 2 ? "disabled" : ""} 
-                    onClick={() => {setLibIndex(libIndex => libIndex + 1)} } />
-            </div>
+
+            <ProjectNavBtn direction='right' 
+                disableFunc={libIndex == projectData.length-1 ? "disabled" : ""} 
+                onClick={() => {
+                    setLib(() => projectData[libIndex+1]);
+                    setLibIndex(libIndex+1);
+                }} />
         </div>
     );
-    return (
-        <Block title="Projects" size='large' InnerDiv={inner}/>
-    );
+    return (<Block title="Projects" size='large' InnerDiv={inner}/>);
 }
 
 
@@ -170,7 +168,7 @@ function DisplayProjects({library}) {
     const projectsList = library.list;
     return (
         <div className='home-projects-display'>
-            <div className='home-projects-category'>{library.category}</div>
+            <div className='home-projects-library'><span>{library.category}</span></div>
             <div className='home-projects-list'>
             {projectsList.map(project => {
                 return <ProjectSingle key={project.id} title={project.title} description={project.description} link={project.link} />

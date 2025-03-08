@@ -5,7 +5,19 @@
         "list": [
             {
                 "id": 1,
-                "title": "Project 1",
+                "title": "Advent of Code",
+                "description": "My First Year of Advent of Code. Sad, I didn't make it very far.",
+                "link": ""
+            },
+            {
+                "id": 2,
+                "title": "Hangman",
+                "description": "",
+                "link": ""
+            },
+            {
+                "id": 3,
+                "title": "Project 3",
                 "description": "Description 1",
                 "link": ""
             }
@@ -16,9 +28,14 @@
         "list": [
             {
                 "id": 1,
-                "title": "Project 12",
-                "description": "Description 1",
-                "link": ""
+                "title": "Notes App",
+                "description": "Simple CLI tool to create, update, and remove notes.",
+                "link": "https://github.com/CVilledieu/NotesApp"
+            },{
+                "id":2,
+                "title":"Advent of Code",
+                "description":"The first few days of Advent of Code 2024",
+                "link":"https://github.com/CVilledieu/AoC2024"
             }
         ]
     },{
