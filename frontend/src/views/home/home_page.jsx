@@ -68,49 +68,26 @@ function ContactInfo() {
 
 
 function Languages() {
-    const NewLang = (Svg, count) => {
+    const NewLang = (Svg, ) => {
         return (
             <div className='home-languages-single'>
                 <div className='language-svg'>{Svg}</div>
-                <StarRating count={count} />
+                
             </div>
         );
     }
     const inner = (
         <div className='inner-div-home' id="home-languages">
-            {NewLang(<Golang />, 5)}
-            {NewLang(<JS />, 4)}
-            {NewLang(<Rust />, 5)}
+            {NewLang(<Golang />)}
+            {NewLang(<JS />)}
+            {NewLang(<Rust />)}
         </div>
     );
     return (
-        <Block title="Experience" InnerDiv={inner}/>
+        <Block title="Preferred Languages" InnerDiv={inner}/>
     );
 }
 
-function StarRating({count}) {
-    let empty = 5 - count;
-    if (count > 5) {
-        count = 5;
-        empty = 0;
-    }
-    const Stars = () => {
-        let stars = [];
-        for (let i = 0; i < count; i++) {
-            stars.push('★');
-            
-        }
-        for (let i = 0; i < empty; i++) {
-            stars.push('☆');
-        }
-        return stars;
-    }
-    return (
-        <div className="stars">
-            {Stars()}
-        </div>
-        );
-}
 
 
 function Projects() {
