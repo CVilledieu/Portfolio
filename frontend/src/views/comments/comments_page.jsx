@@ -7,7 +7,7 @@ export default function CommentsPage() {
     const listState = useState(CommentData);
     const [current, setCurrent] = useState(null);
     return (
-        <div id="comments-page">
+        <div className='page' id="comments-page">
             <title>I'm Just Saying</title>
             <div id="comment-stack">
                 <CommentsList lState={listState} bState={setCurrent}/>
@@ -54,10 +54,10 @@ function CommentBoard({comment}) {
     return (
         <div id="comment-board-inner">
             <div id="comment-board-title">
-                {comment ? comment.Title : "Select a comment"}
+                {comment ? comment.Title : null}
             </div>
             <div id="comment-board-body">
-                {comment ? comment.Body : "Select a comment to read"}
+                {comment ? comment.Body : null}
             </div>
         </div>
     );

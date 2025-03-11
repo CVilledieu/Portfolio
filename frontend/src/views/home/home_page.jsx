@@ -84,7 +84,7 @@ function Languages() {
         </div>
     );
     return (
-        <Block title="Preferred Languages" InnerDiv={inner}/>
+        <Block title="Go-to languages" InnerDiv={inner}/>
     );
 }
 

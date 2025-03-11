@@ -14,4 +14,11 @@ export const CommentData = [{
     Summary: "New developers / programmers should start with a less abstracted language.",
     Body: `The deep end can be a scary place, but it is easier to learn to swim without the safety of the shallow end. Javascript is a great lanuage and will be most developers first and only language, but create pitfalls when you attempt to learn less abstracted languages.`,
 
-}];
+}, {
+    id: 3,
+    Title: "Room for growth: Smaller Git Commits",
+    Summary: "A single commit that should have been multiple is a crime I commit frequently.",
+    Body: "I "
+}
+
+];
