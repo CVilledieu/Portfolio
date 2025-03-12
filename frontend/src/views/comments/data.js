@@ -16,8 +16,8 @@ export const CommentData = [{
 
 }, {
     id: 3,
-    Title: "Room for growth: Smaller Git Commits",
-    Summary: "A single commit that should have been multiple is a crime I commit frequently.",
+    Title: "The right tool for the job",
+    Summary: "3 is the magic number. Every developer should know 3 languages very well.",
     Body: "I "
 }
 
