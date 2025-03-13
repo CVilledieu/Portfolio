@@ -2,9 +2,13 @@ import './projects_style.css';
 import ProjectData from './data.json';
 import React from 'react';
 
+/* Projects page is called from App.jsx
+ProjectsPage() pulls data from projects/data.json
+Indexes of the data are passed to LanguageDiv 
 
 
 
+*/
 export default function ProjectsPage() {
     const data = ProjectData;
     const LanguageMap = () => {

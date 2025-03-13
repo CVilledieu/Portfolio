@@ -32,8 +32,8 @@ function Block({InnerDiv, size = 'medium', title }) {
 function AboutMe() {
     const inner = (
         <div className='inner-div-home' id='home-about'>
-            I'm just your friendly neighborhood developer! I have a passion for the creation and problem solving side of code. I'm always looking for new challenges to tackle and new goals to meet!
-            </div>
+            I'm just your friendly neighborhood developer! I've been creating and coding since I was a kid. I got into coding through creating websites, but that lead making projects in Java and C++. There were many things that took me away from programming, but I always ended up coming back.
+        </div>
     );
     return (
         <Block title="About Me" size='small' InnerDiv={inner}/>
