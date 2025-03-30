@@ -16,9 +16,9 @@ export const CommentData = [{
 
 }, {
     id: 3,
-    Title: "The right tool for the job",
-    Summary: "3 is the magic number. Every developer should know 3 languages very well.",
-    Body: "I "
+    Title: "The hardest part is the 'What'",
+    Summary: "Picking what to create is a common struggle, I share with many.",
+    Body: "Getting the creative spark is the hardest part of programming. Online forms or comment sections all suggest the same things. 'Solve a problem you have' or 'Recreate an app you use a lot'. These are both true and good advise, but they aren't helpful for people looking for the create spark. It would be the same as saying 'Just do it'",
 }
 
 ];
